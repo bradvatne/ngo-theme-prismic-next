@@ -23,7 +23,7 @@ const Index = ({ home, header }) => {
       <Header header={nav} />
       <div className="home-container">
         <Head>
-          <title>{RichText.asText(banner.page_title)}</title>
+          <title>{RichText.asText(banner.home_page_title)}</title>
         </Head>
 
         <Banner banner={banner} />

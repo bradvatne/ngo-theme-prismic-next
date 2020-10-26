@@ -6,17 +6,17 @@ const Banner = ({ banner }) => {
     <section
       className="section-banner"
       style={{
-        backgroundImage: "url(" + banner.image.url + ")",
+        backgroundImage: "url(" + banner.banner_image.url + ")",
         height: "100vh",
         backgroundSize: "cover",
       }}
     >
       <Container>
-        {RichText.asText(banner.title)}
+        {RichText.asText(banner.banner_title)}
         <br />
-        {RichText.asText(banner.text)}
+        {RichText.asText(banner.banner_tagline)}
         <br />
-        {RichText.asText(banner.button_label)}
+        {RichText.asText(banner.banner_button_label)}
       </Container>
     </section>
   );

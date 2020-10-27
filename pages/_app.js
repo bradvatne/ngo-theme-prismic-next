@@ -1,5 +1,5 @@
 // pages/_app.js
-import "bootstrap/dist/css/bootstrap.css";
+import "../styles/global.scss"
 
 const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
 

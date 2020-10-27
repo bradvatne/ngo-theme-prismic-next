@@ -1,6 +1,11 @@
 import Quote from "./Quote";
 import Values from "./Values";
+import Socials from "./Socials";
+import EmailCapture from "./EmailCapture";
+import FooterLinks from "./FooterLinks";
 import { Container } from "react-bootstrap";
+
+// socials_widget, footer_link_block, email_capture
 
 const SliceZone = ({ slices }) => (
   <Container className="slice-zone">
@@ -12,8 +17,14 @@ const SliceZone = ({ slices }) => (
           return <Quote quote={slice.primary} key={`slice-${index}`} />;
         case "values":
           console.log("values slice zone: ");
-          console.log(slice)
+          console.log(slice);
           return <Values values={slice} key={`slice-${index}`} />;
+        case "socials_widget":
+          return <Socials socials={slice} key={`slice-${index}`} />;
+        case "footer_link_block":
+          return <FooterLinks footerLinks={slice} key={`slice-${index}`} />;
+        case "email_capture":
+          return <EmailCapture email={slice} key={`slice-${index}`} />;
       }
     })}
   </Container>

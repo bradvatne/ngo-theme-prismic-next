@@ -8,28 +8,20 @@ import Footer from "./Footer"
 import Banner from "./components/Banner"
 import SliceZone from "./components/SliceZone";
 
-const Index = ({ home, header }) => {
-  //Tests
-  const banner = home.data;
-  const quote = home.data.body[0].primary;
-  const nav = header.data;
-  console.log(home);
-  console.log(header);
-  console.log(banner);
-  console.log(quote);
+const Index = ({ home, header, footer }) => {
 
   return (
     <>
-      <Header header={nav} />
+      <Header header={header.data} />
       <div className="home-container">
         <Head>
-          <title>{RichText.asText(banner.home_page_title)}</title>
+          <title>{RichText.asText(home.data.home_page_title)}</title>
         </Head>
 
-        <Banner banner={banner} />
+        <Banner banner={home.data} />
         <SliceZone slices={home.data.body} />
       </div>
-      <Footer/>
+      <Footer footer={footer.data}/>
     </>
   );
 };
@@ -38,11 +30,13 @@ export async function getStaticProps() {
   const client = Client();
   const home = await client.getSingle("home");
   const header = await client.getSingle("header");
+  const footer = await client.getSingle("footer");
 
   return {
     props: {
-      home: home,
+      home,
       header,
+      footer,
     },
   };
 }

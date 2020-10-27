@@ -1,13 +1,15 @@
-
 import { RichText } from "prismic-reactjs";
 import { Navbar, Nav } from "react-bootstrap";
 
 const Header = ({ header }) => {
   console.log(header);
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" expand="md">
       <Navbar.Brand href="#">{RichText.asText(header.brand_text)}</Navbar.Brand>
-      <NavLinks navList={header.nav_item} />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <NavLinks navList={header.nav_item} />
+      </Navbar.Collapse>
     </Navbar>
   );
 };
@@ -16,7 +18,7 @@ const NavLinks = ({ navList }) => {
   console.log("navlinks data check");
   console.log(navList);
   return (
-    <Nav className="mr-auto">
+    <Nav className="ml-auto">
       {navList.map((navItem, index) => (
         <Nav.Link href="#" key={index}>
           {RichText.asText(navItem.label)}

@@ -1,10 +1,16 @@
 import SliceZone from "./components/SliceZone";
+import {Row} from 'react-bootstrap';
+
 
 const Footer = ({ footer }) => {
   console.log("footer data: ");
   console.log(footer);
 
-  return <SliceZone slices={footer.body} />;
+  return (
+    <Row className="p-o">
+  <SliceZone slices={footer.body} />;
+  </Row>
+  )
 };
 
 export default Footer;

@@ -12,7 +12,7 @@ const Banner = ({ banner }) => {
       }}
     >
       <Container className="d-flex flex-column h-100 justify-content-center pb-5">
-        <div className="content text-white">
+        <div className="content text-center text-white">
         <RichText render={banner.banner_title} />
         <RichText render={banner.banner_tagline} />
         {RichText.asText(banner.banner_button_label)}

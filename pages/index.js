@@ -35,9 +35,9 @@ export async function getStaticProps() {
 
   return {
     props: {
-      home,
-      header,
-      footer,
+      home: home,
+      header: header,
+      footer: footer,
     },
   };
 }

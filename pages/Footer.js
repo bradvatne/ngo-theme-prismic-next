@@ -6,9 +6,9 @@ const Footer = ({ footer }) => {
   console.log(footer);
 
   return (
-    <div className="bg-success text-light">
+    <div className="bg-primary text-light">
     <Container>
-      <Row className="p-o">
+      <Row className="p-0">
         <SliceZone slices={footer.body} />;
       </Row>
     </Container>

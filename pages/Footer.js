@@ -1,4 +1,4 @@
-import SliceZone from "./components/SliceZone";
+import SliceZone from "../components/SliceZone";
 import { Row, Container } from "react-bootstrap";
 
 const Footer = ({ footer }) => {

@@ -5,8 +5,8 @@ import { Container, Row } from "react-bootstrap";
 
 import Header from "./Header";
 import Footer from "./Footer"
-import Banner from "./components/Banner"
-import SliceZone from "./components/SliceZone";
+import Banner from "../components/Banner"
+import SliceZone from "../components/SliceZone";
 
 const Index = ({ home, header, footer }) => {
 

@@ -1,6 +1,6 @@
 import { RichText } from "prismic-reactjs";
 import { Container } from "react-bootstrap";
-import htmlSerializer from '../../lib/htmlSerializer'
+import htmlSerializer from '../lib/htmlSerializer'
 
 const Banner = ({ banner }) => {
   return (

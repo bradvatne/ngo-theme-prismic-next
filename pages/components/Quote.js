@@ -3,12 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Quote = ({ quote }) => (
   <section className="section-quote">
-    <Row className="m-0">
-    <Col className="md-6 sm-12">
-      
+    <Row>
+    <Col className="col-md-3">
       <RichText render={quote.author} />
     </Col>
-    <Col className="md-6 sm-12">
+    <Col className="col-md-9">
     <RichText render={quote.quote} />
     </Col>
     </Row>

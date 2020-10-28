@@ -8,8 +8,8 @@ const Footer = ({ footer }) => {
   return (
     <div className="bg-primary text-light">
     <Container>
-      <Row className="p-0 m-0">
-        <SliceZone slices={footer.body} />;
+      <Row>
+        <SliceZone slices={footer.body} />
       </Row>
     </Container>
     </div>

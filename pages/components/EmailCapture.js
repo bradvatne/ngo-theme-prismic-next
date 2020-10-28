@@ -10,7 +10,7 @@ const EmailCapture = ({ email }) => {
 
   */
   return (
-    <Col sm="12" md="4">
+    <Col sm="12" md="3">
       <RichText render={email.primary.email_capture_title} />
       <RichText render={email.primary.email_capture_description} />
       

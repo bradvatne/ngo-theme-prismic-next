@@ -5,7 +5,7 @@ import { Row, Col } from "react-bootstrap";
 
 const Socials = ({ socials }) => {
   return (
-    <Col sm="12" md="4">
+    <Col sm="12" md="3">
       <RichText render={socials.primary.socials_widget_title} />
       <SocialsList socialsList={socials.items} />
     </Col>

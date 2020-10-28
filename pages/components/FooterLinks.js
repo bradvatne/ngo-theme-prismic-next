@@ -4,7 +4,7 @@ import { Link } from "next/link";
 
 const FooterLinks = ({ footerLinks }) => {
   return (
-    <Col md="4">
+    <Col md="3">
       <RichText render={footerLinks.primary.footer_link_block_title} />
       <FooterLinksList footerLinks={footerLinks.items} />
     </Col>

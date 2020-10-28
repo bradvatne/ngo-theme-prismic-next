@@ -4,10 +4,8 @@ import { Row, Col } from "react-bootstrap";
 //Current step : map through socials list
 
 const Socials = ({ socials }) => {
-  console.log("socials: ");
-  console.log(socials);
   return (
-    <Col>
+    <Col sm="12" md="4">
       <RichText render={socials.primary.socials_widget_title} />
       <SocialsList socialsList={socials.items} />
     </Col>
@@ -22,6 +20,7 @@ const SocialsList = ({ socialsList }) => {
           <SocialItem
             social="fab fa-facebook"
             link={item.socials_widget_link}
+            key={index}
           />
         );
       case "Instagram":
@@ -29,15 +28,24 @@ const SocialsList = ({ socialsList }) => {
           <SocialItem
             social="fab fa-instagram"
             link={item.socials_widget_link}
+            key={index}
           />
         );
       case "Youtube":
         return (
-          <SocialItem social="fab fa-youtube" link={item.socials_widget_link} />
+          <SocialItem
+            social="fab fa-youtube"
+            link={item.socials_widget_link}
+            key={index}
+          />
         );
       case "Twitter":
         return (
-          <SocialItem social="fab fa-twitter" link={item.socials_widget_link} />
+          <SocialItem
+            social="fab fa-twitter"
+            link={item.socials_widget_link}
+            key={index}
+          />
         );
     }
     return;

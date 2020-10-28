@@ -1,5 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 import { RichText } from "prismic-reactjs";
+import { Link } from "next/link";
 
 const FooterLinks = ({ footerLinks }) => {
   return (
@@ -14,7 +15,7 @@ const FooterLinksList = ({ footerLinks }) => {
   return (
     <>
       {footerLinks.map((item, index) => (
-        <RichText render={item.footer_link_block_label} key={index}/>
+          <a key={index}>{RichText.asText(item.footer_link_block_label)}<br/></a>
       ))}
     </>
   );

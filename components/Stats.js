@@ -1,12 +1,30 @@
-import {Container, Col, Row} from 'react-bootstrap';
-import {RichText} from 'prismic-reactjs';
+import { Container, Col, Row } from "react-bootstrap";
+import { RichText } from "prismic-reactjs";
 
-const Stats = () => {
-    return (
-        <div>
-
-        </div>
-    )
-}
+/*
+statistic_number
+statistic_icon
+statistic_title
+statistic_description
+*/
+const Stats = ({ stats }) => {
+  console.log("STATS INFO");
+  console.log(stats);
+  return (
+    <Container>
+      <Row>
+        {stats.items.map((item, key) => (
+          <Col sm="2" md="4" className="text-center" key={key}>
+            <div className="">
+              <i className={item.statistic_icon[0].text + " fa-2x"} />
+              <h1 className="display-4">{item.statistic_number}</h1>
+            <RichText render={item.statistic_description} />
+            </div>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
+};
 
 export default Stats;

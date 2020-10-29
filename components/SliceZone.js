@@ -47,7 +47,7 @@ const SliceZone = ({ slices }) => (
           );
         case "statistics":
           return (
-            <section className="section-statistics py-4" key={`slice-${index}`}>
+            <section className="section-statistics" key={`slice-${index}`}>
               <Stats stats={slice} />
             </section>
           );

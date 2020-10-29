@@ -4,7 +4,7 @@ import { Container, Button, Row, Col } from "react-bootstrap";
 const Quote = ({ quote }) => (
   <Container>
     <Row className="d-flex flex-column-reverse flex-md-row text-center">
-      <Col sm="12" md="7" className="d-flex flex-column justify-content-center">
+      <Col sm="12" md="7" className="d-flex flex-column justify-content-center text-sm-center text-md-right">
         <RichText render={quote.quote} />
         <div>
           <Button variant="primary" className="px-3">

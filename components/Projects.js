@@ -1,8 +1,9 @@
-import { Carousel } from "react-bootstrap";
+import { Container, Carousel } from "react-bootstrap";
 import { useState } from "react";
 import { RichText } from "prismic-reactjs";
 
 const Projects = ({ projects }) => {
+    console.log('projects TEEEST')
   console.log(projects);
   const [index, setIndex] = useState(0);
 
@@ -11,7 +12,7 @@ const Projects = ({ projects }) => {
   };
 
   return (
-    <section className="section-projects">
+    <Container>
       <div className="text-center mb-5">
         <RichText render={projects.primary.projects_title} />
         <RichText render={projects.primary.projects_description} />
@@ -26,12 +27,12 @@ const Projects = ({ projects }) => {
             />
             <Carousel.Caption>
               <RichText render={item.project_title} />
-              <RichText render={item.projects_description} />
+              <RichText render={item.project_description} />
             </Carousel.Caption>
           </Carousel.Item>
         ))}
       </Carousel>
-    </section>
+    </Container>
   );
 };
 

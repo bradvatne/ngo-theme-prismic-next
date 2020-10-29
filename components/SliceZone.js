@@ -16,25 +16,27 @@ const SliceZone = ({ slices }) => (
       switch (slice.slice_type) {
         case "quote":
           return (
-            <Container className="slice-zone pb-5" key={`slice-${index}`}>
+            <section className={`section-quote slice-zone py-4`} key={`slice-${index}`}>
               <Quote quote={slice.primary} />
-            </Container>
+            </section>
           );
         case "values":
           return (
+            <section className="section-values py-4" key={`slice-${index}`}>
               <Values values={slice} key={`slice-${index}`}/>
+            </section>
           );
           case "main_project":
           return (
-            <Container className="slice-zone pb-5" key={`slice-${index}`}>
+            <section className="section-main-project py-4" key={`slice-${index}`}>
               <MainProject mainProject={slice} />
-            </Container>
+            </section>
           );
           case "projects":
           return (
-            <Container className="slice-zone pb-5" key={`slice-${index}`}>
+            <section className="section-projects py-4" key={`slice-${index}`}>
               <Projects projects={slice} />
-            </Container>
+            </section>
           );
         case "socials_widget":
           return <Socials socials={slice} key={`slice-${index}`} />;

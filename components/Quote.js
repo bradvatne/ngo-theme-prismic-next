@@ -2,13 +2,12 @@ import { RichText } from "prismic-reactjs";
 import { Container, Button, Row, Col } from "react-bootstrap";
 
 const Quote = ({ quote }) => (
-  <section className="section-quote">
   <Container>
     <Row>
       <Col sm="12" md="7" className="d-flex flex-column justify-content-center">
         <RichText render={quote.quote} />
         <div className="text-center">
-          <Button variant="outline-primary" className="px-5">
+          <Button variant="primary" className="px-5">
             {RichText.asText(quote.quote_button_label)}
           </Button>
         </div>
@@ -21,8 +20,7 @@ const Quote = ({ quote }) => (
         <RichText render={quote.author} />
       </Col>
     </Row>
-    </Container>
-  </section>
+  </Container>
 );
 
 export default Quote;

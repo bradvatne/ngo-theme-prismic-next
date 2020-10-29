@@ -22,9 +22,7 @@ const SliceZone = ({ slices }) => (
           );
         case "values":
           return (
-            <Container className="slice-zone pb-5" key={`slice-${index}`}>
-              <Values values={slice} />
-            </Container>
+              <Values values={slice} key={`slice-${index}`}/>
           );
           case "main_project":
           return (

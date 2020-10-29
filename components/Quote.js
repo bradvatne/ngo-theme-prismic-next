@@ -1,8 +1,9 @@
 import { RichText } from "prismic-reactjs";
-import { Button, Row, Col } from "react-bootstrap";
+import { Container, Button, Row, Col } from "react-bootstrap";
 
 const Quote = ({ quote }) => (
   <section className="section-quote">
+  <Container>
     <Row>
       <Col sm="12" md="7" className="d-flex flex-column justify-content-center">
         <RichText render={quote.quote} />
@@ -20,6 +21,7 @@ const Quote = ({ quote }) => (
         <RichText render={quote.author} />
       </Col>
     </Row>
+    </Container>
   </section>
 );
 

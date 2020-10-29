@@ -1,15 +1,24 @@
 import { RichText } from "prismic-reactjs";
-import { Container, Row, Col } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 
 const Quote = ({ quote }) => (
   <section className="section-quote">
     <Row>
-    <Col className="col-md-3">
-      <RichText render={quote.author} />
-    </Col>
-    <Col className="col-md-9">
-    <RichText render={quote.quote} />
-    </Col>
+      <Col sm="12" md="7" className="d-flex flex-column justify-content-center">
+        <RichText render={quote.quote} />
+        <div className="text-center">
+          <Button variant="outline-primary" className="px-5">
+            {RichText.asText(quote.quote_button_label)}
+          </Button>
+        </div>
+      </Col>
+      <Col sm="12" md="5" className="text-center">
+        <img
+          src={quote.author_portrait.url}
+          className="img-fluid w-50 rounded-circle shadow-lg"
+        />
+        <RichText render={quote.author} />
+      </Col>
     </Row>
   </section>
 );

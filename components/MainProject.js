@@ -6,16 +6,16 @@ const MainProject = ({ mainProject }) => {
   return (
     <section className="section-mainProject">
       <Row>
-        <Col sm="12" md="6" className="d-flex flex-column justify-content-center">
+        <Col sm="12" md="6" className="d-flex flex-column justify-content-center text-center">
         <RichText render={mainProject.primary.main_project_title} />
         </Col>
         <Col sm="12" md="6" className="d-flex flex-column justify-content-center">
           <RichText render={mainProject.primary.main_project_text} />
           <div className="d-flex flex-row justify-content-center">
-          <Button variant="primary">
+          <Button variant="primary" className="px-5 mx-3">
             {RichText.asText(mainProject.primary.main_project_button_1_label)}
           </Button>
-          <Button variant="outline-primary">
+          <Button variant="outline-primary" className="px-5 mx-3">
             {RichText.asText(mainProject.primary.main_project_button_2_label)}
           </Button>
           </div>

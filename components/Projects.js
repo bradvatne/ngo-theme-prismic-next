@@ -12,7 +12,7 @@ const Projects = ({ projects }) => {
 
   return (
     <section className="section-projects">
-      <div className="text-center">
+      <div className="text-center mb-5">
         <RichText render={projects.primary.projects_title} />
         <RichText render={projects.primary.projects_description} />
       </div>

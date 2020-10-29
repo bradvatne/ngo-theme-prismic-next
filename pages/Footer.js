@@ -8,7 +8,7 @@ const Footer = ({ footer }) => {
   return (
     <div className="bg-primary text-light">
     <Container>
-      <Row>
+      <Row className="py-5">
         <SliceZone slices={footer.body} />
       </Row>
     </Container>

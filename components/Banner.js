@@ -5,7 +5,7 @@ import htmlSerializer from '../lib/htmlSerializer'
 const Banner = ({ banner }) => {
   return (
     <section
-      className="section-banner"
+      className="section-banner mb-5"
       style={{
         backgroundImage: "url(" + banner.banner_image.url + ")",
         height: "100vh",

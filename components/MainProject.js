@@ -4,12 +4,12 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 const MainProject = ({ mainProject }) => {
   console.log(mainProject);
   return (
-    <section className="section-quote">
+    <section className="section-mainProject">
       <Row>
-        <Col className="d-flex flex-column justify-content-center">
-          <RichText render={mainProject.primary.main_project_title} />
+        <Col sm="12" md="6" className="d-flex flex-column justify-content-center">
+        <RichText render={mainProject.primary.main_project_title} />
         </Col>
-        <Col className="d-flex flex-column justify-content-center">
+        <Col sm="12" md="6" className="d-flex flex-column justify-content-center">
           <RichText render={mainProject.primary.main_project_text} />
           <div className="d-flex flex-row justify-content-center">
           <Button variant="primary">

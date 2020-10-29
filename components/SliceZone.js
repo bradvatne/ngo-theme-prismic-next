@@ -5,6 +5,7 @@ import EmailCapture from "./EmailCapture";
 import FooterLinks from "./FooterLinks";
 import FooterMotto from "./FooterMotto";
 import MainProject from './MainProject';
+import Projects from './Projects'
 import { Container } from "react-bootstrap";
 
 // socials_widget, footer_link_block, email_capture
@@ -29,6 +30,12 @@ const SliceZone = ({ slices }) => (
           return (
             <Container className="slice-zone" key={`slice-${index}`}>
               <MainProject mainProject={slice} />
+            </Container>
+          );
+          case "projects":
+          return (
+            <Container className="slice-zone" key={`slice-${index}`}>
+              <Projects projects={slice} />
             </Container>
           );
         case "socials_widget":

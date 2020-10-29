@@ -1,14 +1,15 @@
 import { RichText } from "prismic-reactjs";
 import { Container, Col, Row } from "react-bootstrap";
+import htmlSerializer from '../lib/htmlSerializer'
 
 const Values = ({ values }) => {
   return (
     
       <Container>
-        <div className="text-center mb-5">
-          <RichText render={values.primary.values_title} />
-          <RichText render={values.primary.values_tagline} />
-        </div>
+        {/*<div className="text-center mb-5">
+          <RichText htmlSerializer={htmlSerializer} render={values.primary.values_title} />
+           <RichText render={values.primary.values_tagline} /> 
+        </div>*/}
         <Row>
           <ValuesCards values={values.items} />
         </Row>

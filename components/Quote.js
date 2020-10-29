@@ -3,16 +3,16 @@ import { Container, Button, Row, Col } from "react-bootstrap";
 
 const Quote = ({ quote }) => (
   <Container>
-    <Row>
+    <Row className="d-flex flex-column-reverse flex-md-row text-center">
       <Col sm="12" md="7" className="d-flex flex-column justify-content-center">
         <RichText render={quote.quote} />
-        <div className="text-center">
-          <Button variant="primary" className="px-5">
+        <div>
+          <Button variant="primary" className="px-3">
             {RichText.asText(quote.quote_button_label)}
           </Button>
-        </div>
+          </div>
       </Col>
-      <Col sm="12" md="5" className="text-center">
+      <Col sm="12" md="5">
         <img
           src={quote.author_portrait.url}
           className="img-fluid w-50 rounded-circle shadow-lg"

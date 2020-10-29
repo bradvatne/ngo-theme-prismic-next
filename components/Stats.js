@@ -14,10 +14,10 @@ const Stats = ({ stats }) => {
     <Container>
       <Row>
         {stats.items.map((item, key) => (
-          <Col sm="2" md="4" className="text-center" key={key}>
+          <Col className="column-sm-2" className="text-center" key={key}>
             <div className="">
-              <i className={item.statistic_icon[0].text + " fa-2x"} />
-              <h1 className="display-4">{item.statistic_number}</h1>
+              <i className={item.statistic_icon[0].text + " fa-1x"} />
+              <h1>{item.statistic_number}</h1>
             <RichText render={item.statistic_description} />
             </div>
           </Col>

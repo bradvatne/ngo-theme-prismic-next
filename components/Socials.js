@@ -1,7 +1,5 @@
 import { RichText } from "prismic-reactjs";
-import { Row, Col } from "react-bootstrap";
-
-//Current step : map through socials list
+import { Col } from "react-bootstrap";
 
 const Socials = ({ socials }) => {
   return (
@@ -53,7 +51,6 @@ const SocialsList = ({ socialsList }) => {
 };
 
 const SocialItem = ({ social, link }) => {
-  console.log(link);
   return <i className={social + " fa-3x"} />;
 };
 

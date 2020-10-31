@@ -2,7 +2,6 @@ import { RichText } from "prismic-reactjs";
 import { Navbar, Nav } from "react-bootstrap";
 
 const Header = ({ header }) => {
-  console.log(header);
   return (
     <Navbar
       bg="dark"

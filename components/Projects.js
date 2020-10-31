@@ -1,17 +1,8 @@
 import { Container, Carousel } from "react-bootstrap";
-import { useState } from "react";
 import { RichText } from "prismic-reactjs";
-import htmlSerializer from '../lib/htmlSerializer'
+import htmlSerializer from "../lib/htmlSerializer";
 
 const Projects = ({ projects }) => {
-    console.log('projects TEEEST')
-  console.log(projects);
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
-
   return (
     <Container>
       {/* <div className="text-center mb-5">
@@ -19,8 +10,8 @@ const Projects = ({ projects }) => {
          <RichText render={projects.primary.projects_description} /> 
       </div>*/}
       <Carousel>
-        {projects.items.map((item) => (
-          <Carousel.Item>
+        {projects.items.map((item, index) => (
+          <Carousel.Item key={index}>
             <img
               className="d-block w-100"
               src={item.project_image.url}

@@ -17,7 +17,12 @@ const Index = ({ home, header, footer, projects }) => {
           rel="stylesheet"
         />
       </Head>
-      <LandingPage home={home} header={header} footer={footer} projects={projects} />
+      <LandingPage
+        home={home}
+        header={header}
+        footer={footer}
+        projects={projects}
+      />
     </div>
   );
 };

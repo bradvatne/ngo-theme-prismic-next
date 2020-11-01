@@ -2,13 +2,12 @@ import Head from "next/head";
 import { Client } from "../prismic-configuration";
 import { RichText } from "prismic-reactjs";
 
-import Header from "./Header";
-import Footer from "./Footer";
-import LandingPage from "./LandingPage";
+import LandingPage from "../components/LandingPage";
+import DefaultLayout from "../layouts";
 
 const Index = ({ home, header, footer }) => {
   return (
-    <div className="layout">
+    <div className="page-container">
       <Head>
         <title>{RichText.asText(home.data.home_page_title)}</title>
         <link
@@ -16,16 +15,14 @@ const Index = ({ home, header, footer }) => {
           rel="stylesheet"
         />
       </Head>
-      <Header header={header.data} />
-      <LandingPage home={home}/>
-      <Footer footer={footer.data} />
+        <LandingPage home={home} header={header} footer={footer}/>
     </div>
   );
 };
 
 export async function getStaticProps() {
   const client = Client();
-  const home = await client.getSingle("home")
+  const home = await client.getSingle("home");
   const header = await client.getSingle("header");
   const footer = await client.getSingle("footer");
 

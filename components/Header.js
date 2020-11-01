@@ -1,5 +1,6 @@
 import { RichText } from "prismic-reactjs";
 import { Navbar, Nav } from "react-bootstrap";
+import Link from "next/link";
 
 const Header = ({ header }) => {
   return (
@@ -22,9 +23,9 @@ const NavLinks = ({ navList }) => {
   return (
     <Nav className="ml-auto">
       {navList.map((navItem, index) => (
-        <Nav.Link href="#" key={index} className="text-white">
-          {RichText.asText(navItem.label)}
-        </Nav.Link>
+          <Link href={navItem.link.type} key={index}>
+            <a className="text-white p-3">{RichText.asText(navItem.label)}</a>
+          </Link>
       ))}
     </Nav>
   );

@@ -2,7 +2,7 @@ import { Container, Carousel } from "react-bootstrap";
 import { RichText } from "prismic-reactjs";
 import htmlSerializer from "../lib/htmlSerializer";
 
-const Projects = ({ projects }) => {
+const PicCarousel = ({ projects }) => {
   return (
     <Container>
       {/* <div className="text-center mb-5">
@@ -28,4 +28,4 @@ const Projects = ({ projects }) => {
   );
 };
 
-export default Projects;
+export default PicCarousel;

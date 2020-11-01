@@ -5,11 +5,8 @@ import EmailCapture from "./EmailCapture";
 import FooterLinks from "./FooterLinks";
 import FooterMotto from "./FooterMotto";
 import MainProject from "./MainProject";
-import Projects from "./Projects";
+import PicCarousel from "./PicCarousel";
 import Stats from "./Stats";
-import { Container } from "react-bootstrap";
-
-// socials_widget, footer_link_block, email_capture
 
 const SliceZone = ({ slices }) => (
   <>
@@ -42,7 +39,7 @@ const SliceZone = ({ slices }) => (
         case "projects":
           return (
             <section className="section-projects py-4" key={`slice-${index}`}>
-              <Projects projects={slice} />
+              <PicCarousel projects={slice} />
             </section>
           );
         case "statistics":

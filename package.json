@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "bootstrap": "^4.5.3",
     "framer-motion": "^2.9.4",
     "next": "^9.5.5",

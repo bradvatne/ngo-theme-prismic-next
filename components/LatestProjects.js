@@ -7,9 +7,13 @@ export const LatestProjects = ({ projects }) => {
       <Container>
         <Row>
           <Col md={9} className="p-2">
-            <img
-              src={projects[0].data.project_image.url}
-              className="img-fluid"
+            <div
+              className="section-banner"
+              style={{
+                backgroundImage: "url(" + projects[0].data.project_image.url + ")",
+                height: "100%",
+                backgroundSize: "cover",
+              }}
             />
           </Col>
           <Col md={3}>

@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.3",
+    "framer-motion": "^2.9.4",
     "next": "^9.5.5",
     "prismic-dom": "^2.2.4",
     "prismic-javascript": "^3.0.2",

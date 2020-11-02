@@ -10,7 +10,9 @@ const Header = ({ header }) => {
       expand="md"
       className="position-absolute w-100 bg-transparent"
     >
-      <Navbar.Brand href="#">{RichText.asText(header.brand_text)}</Navbar.Brand>
+      <Navbar.Brand>
+        <Link href="/"><a className="text-white"></a>{RichText.asText(header.brand_text)}</Link>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <NavLinks navList={header.nav_item} />
@@ -23,9 +25,9 @@ const NavLinks = ({ navList }) => {
   return (
     <Nav className="ml-auto">
       {navList.map((navItem, index) => (
-          <Link href={navItem.link.type} key={index}>
-            <a className="text-white p-3">{RichText.asText(navItem.label)}</a>
-          </Link>
+        <Link href={navItem.link.type} key={index}>
+          <a className="text-white p-3">{RichText.asText(navItem.label)}</a>
+        </Link>
       ))}
     </Nav>
   );

@@ -7,9 +7,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import DefaultLayout from "../layouts";
 
 const Projects = ({ header, footer, projects, projectsPosts }) => {
-  console.log(projectsPosts);
-  console.log("PROJECTS HERE");
-  console.log(projects);
   return (
     <DefaultLayout header={header} footer={footer}>
       <PageBanner projects={projects.data} />

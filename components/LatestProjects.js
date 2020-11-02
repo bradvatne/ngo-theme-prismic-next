@@ -2,8 +2,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { RichText } from "prismic-reactjs";
 
 export const LatestProjects = ({ projects }) => {
-  console.log(projects);
-  console.log(projects[0].data.project_image.url);
   return (
     <section className="section-projects py-4">
       <Container>

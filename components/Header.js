@@ -3,6 +3,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import { useState } from "react";
 import Link from "next/link";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import Fade from "react-bootstrap/Fade";
 
 const Header = ({ header }) => {
   const [stickyNav, setStickyNav] = useState(false);
@@ -10,30 +11,38 @@ const Header = ({ header }) => {
     ({ currPos }) => {
       const scrollY = Math.abs(currPos.y);
       if (scrollY > 900 && !stickyNav) setStickyNav(true);
-      if (scrollY < 100 && stickyNav) setStickyNav(false);
+      if (scrollY < 200 && stickyNav) setStickyNav(false);
     },
     [stickyNav]
   );
 
   return (
-    <Navbar
-      expand="md"
-      className={
-        stickyNav
-          ? "fixed-top w-100 bg-primary"
-          : "position-absolute w-100 bg-transparent"
-      }
-    >
-      <Navbar.Brand>
-        <Link href="/">
-          <a className="text-white">{RichText.asText(header.brand_text)}</a>
-        </Link>
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <NavLinks navList={header.nav_item} />
-      </Navbar.Collapse>
-    </Navbar>
+    <div className="nav-container">
+      <Navbar expand="md" className={"position-absolute w-100 bg-transparent"}>
+        <Navbar.Brand>
+          <Link href="/">
+            <a className="text-white">{RichText.asText(header.brand_text)}</a>
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <NavLinks navList={header.nav_item} />
+        </Navbar.Collapse>
+      </Navbar>
+      <Fade in={stickyNav}>
+        <Navbar expand="md" className="fixed-top w-100 bg-primary">
+          <Navbar.Brand>
+            <Link href="/">
+              <a className="text-white">{RichText.asText(header.brand_text)}</a>
+            </Link>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <NavLinks navList={header.nav_item} />
+          </Navbar.Collapse>
+        </Navbar>
+      </Fade>
+    </div>
   );
 };
 

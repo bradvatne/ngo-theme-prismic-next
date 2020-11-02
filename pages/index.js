@@ -1,13 +1,10 @@
 import Head from "next/head";
+import Prismic from "prismic-javascript";
 import { Client } from "../prismic-configuration";
 import { RichText } from "prismic-reactjs";
-
-import LandingPage from "../components/LandingPage";
-import DefaultLayout from "../layouts";
-import Prismic from "prismic-javascript";
+import { LandingPage } from "../components/";
 
 const Index = ({ home, header, footer, projects }) => {
-  console.log(projects);
   return (
     <div className="page-container">
       <Head>
@@ -29,12 +26,6 @@ const Index = ({ home, header, footer, projects }) => {
 
 export async function getStaticProps() {
   const client = Client();
-  /*const data = await client.query(
-    Prismic.Predicates.at("document.type", "home", "header", "footer", 
-      "project",
-    )
-      console.log(data);
-  );*/
 
   const home = await client.getSingle("home");
   const header = await client.getSingle("header");

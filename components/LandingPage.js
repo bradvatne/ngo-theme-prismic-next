@@ -1,6 +1,4 @@
-import { Head } from "next/head";
 import { Banner, SliceZone, LatestProjects } from ".";
-import { Client } from "../prismic-configuration";
 import DefaultLayout from "../layouts";
 
 const LandingPage = ({ header, home, footer, projects }) => (

@@ -3,7 +3,6 @@ import { RichText } from "prismic-reactjs";
 import htmlSerializer from "../lib/htmlSerializer";
 
 const PageBanner = ({ projects }) => {
-  console.log(projects);
   if (projects)
     return (
       <section
@@ -30,7 +29,6 @@ const PageBanner = ({ projects }) => {
       </section>
     );
   else {
-    console.log(projects);
     return <div>nope</div>;
   }
 };

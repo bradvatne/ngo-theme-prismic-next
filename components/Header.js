@@ -11,7 +11,7 @@ const Header = ({ header }) => {
       className="position-absolute w-100 bg-transparent"
     >
       <Navbar.Brand>
-        <Link href="/"><a className="text-white"></a>{RichText.asText(header.brand_text)}</Link>
+        <Link href="/"><a className="text-white">{RichText.asText(header.brand_text)}</a></Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

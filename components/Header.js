@@ -1,32 +1,15 @@
 import { RichText } from "prismic-reactjs";
 import { Navbar, Nav } from "react-bootstrap";
 import { useState } from "react";
-import Link from "next/link";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import Fade from "react-bootstrap/Fade";
+import Link from "next/link";
 
 const Header = ({ header }) => {
-  const [stickyNav, setStickyNav] = useState({
-    render: false,
-    animate: false,
-  });
+  const [stickyNav, setStickyNav] = useState(false);
   useScrollPosition(({ currPos }) => {
     const scrollY = Math.abs(currPos.y);
-    if (scrollY > 300 && !stickyNav.render)
-      setStickyNav({
-        render: true,
-        animate: false,
-      });
-    if (scrollY > 800 && !stickyNav.render)
-      setStickyNav({
-        render: true,
-        animate: true,
-      });
-    if (scrollY < 299 && stickyNav.render)
-      setStickyNav({
-        render: false,
-        animate: false,
-      });
+    if (scrollY > 300 && !stickyNav) setStickyNav(true);
+    if (scrollY < 299 && stickyNav) setStickyNav(false);
   });
 
   const stickyClass = "fixed-top w-100 bg-primary";
@@ -36,14 +19,13 @@ const Header = ({ header }) => {
   //render = render the component
   //animate = trigger fade in animation, making the compononent visible
 
-  if (!stickyNav.render && !stickyNav.animate)
-    return <NavBar header={header} navType={normalClass} />;
-  if (stickyNav.render)
-    return (
-      <Fade in={stickyNav.animate}>
-        <NavBar header={header} navType={stickyClass} />
-      </Fade>
-    );
+  return (
+      <NavBar
+        header={header}
+        navType={stickyClass}
+        toggleId={toggleId}
+      />
+  );
 };
 
 const NavBar = ({ header, navType, toggleId }) => (

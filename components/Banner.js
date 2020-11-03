@@ -1,11 +1,9 @@
 import { RichText } from "prismic-reactjs";
 import { Container } from "react-bootstrap";
 import htmlSerializer from "../lib/htmlSerializer";
-import { Fade, Slide } from "react-awesome-reveal";
 
 const Banner = ({ banner }) => {
   return (
-    <Fade>
       <section
         className="section-banner"
         style={{
@@ -16,7 +14,6 @@ const Banner = ({ banner }) => {
       >
         <Container className="d-flex flex-column h-100 justify-content-center pb-5">
           <div className="content text-center text-white">
-            <Slide cascade direction="up">
               <RichText
                 htmlSerializer={htmlSerializer}
                 render={banner.banner_title}
@@ -26,11 +23,9 @@ const Banner = ({ banner }) => {
                 render={banner.banner_tagline}
               />
               <div>{RichText.asText(banner.banner_button_label)}</div>
-            </Slide>
           </div>
         </Container>
       </section>
-    </Fade>
   );
 };
 

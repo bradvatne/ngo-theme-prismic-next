@@ -12,14 +12,14 @@ const Header = ({ header }) => {
     if (scrollY < 299 && stickyNav) setStickyNav(false);
   });
 
-  const stickyClass = "fixed-top w-100 bg-primary";
-  const normalClass = "position-absolute w-100 bg-transparent";
+  const stickyClass = "fixed-top w-100 bg-primary shadow-lg navbar-dark";
+  const normalClass = "fixed-top w-100 bg- shadow-lg navbar-dark";
   const toggleId = "basic-navbar-nav";
 
   return (
       <NavBar
         header={header}
-        navType={stickyClass}
+        navType={stickyNav ? stickyClass : normalClass}
         toggleId={toggleId}
       />
   );

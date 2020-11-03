@@ -2,7 +2,9 @@ $theme-colors: ();
 
 $enable-shadows: true;
 
-$font-family-base: "Quicksand";
+$font-family-serif: "Quicksand";
+$font-family-sans-serif: "Nunito";
 
 @import "~bootstrap/scss/bootstrap.scss";
-@import url("https://fonts.googleapis.com/css?family=Nunito|Quicksand");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+@import url("https://fonts.googleapis.com/css?family=Nunito");

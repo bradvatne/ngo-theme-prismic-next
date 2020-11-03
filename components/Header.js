@@ -16,6 +16,7 @@ const Header = ({ header }) => {
     [stickyNav]
   );
 
+  //refactor navbar as a variable and pass class as props
   return (
     <div className="nav-container">
       <Navbar expand="md" className={"position-absolute w-100 bg-transparent"}>

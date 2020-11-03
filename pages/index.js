@@ -9,10 +9,7 @@ const Index = ({ home, header, footer, projects }) => {
     <div className="page-container">
       <Head>
         <title>{RichText.asText(home.data.home_page_title)}</title>
-        <link
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-          rel="stylesheet"
-        />
+        <script src="https://kit.fontawesome.com/cf45b65f00.js" crossorigin="anonymous"></script>
       </Head>
       <LandingPage
         home={home}

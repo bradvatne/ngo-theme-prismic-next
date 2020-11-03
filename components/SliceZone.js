@@ -1,9 +1,5 @@
 import Quote from "./Quote";
 import Values from "./Values";
-import Socials from "./Socials";
-import EmailCapture from "./EmailCapture";
-import FooterLinks from "./FooterLinks";
-import FooterMotto from "./FooterMotto";
 import MainProject from "./MainProject";
 import PicCarousel from "./PicCarousel";
 import Stats from "./Stats";
@@ -48,14 +44,6 @@ const SliceZone = ({ slices }) => (
               <Stats stats={slice} />
             </section>
           );
-        case "socials_widget":
-          return <Socials socials={slice} key={`slice-${index}`} />;
-        case "footer_link_block":
-          return <FooterLinks footerLinks={slice} key={`slice-${index}`} />;
-        case "email_capture":
-          return <EmailCapture email={slice} key={`slice-${index}`} />;
-        case "motto":
-          return <FooterMotto footerMotto={slice} key={`slice-${index}`} />;
       }
     })}
   </>

@@ -1,11 +1,7 @@
 export { default as Banner } from "./Banner";
-export { default as EmailCapture } from "./EmailCapture";
-export { default as FooterLinks } from "./FooterLinks";
-export { default as FooterMotto } from "./FooterMotto";
 export { default as MainProject } from "./MainProject";
 export { default as Quote } from "./Quote";
 export { default as SliceZone } from "./SliceZone";
-export { default as Socials } from "./Socials";
 export { default as Stats } from "./Stats";
 export { default as Values } from "./Values";
 export { default as Header } from "./Header";

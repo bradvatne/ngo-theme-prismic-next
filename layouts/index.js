@@ -5,7 +5,7 @@ const DefaultLayout = (props) => {
     <div className="layout-container">
       <Header header={props.header.data} />
       {props.children}
-      <Footer footer={props.footer.data} />
+      <Footer footer={props.footer.data} nav={props.header.data} />
     </div>
   );
 };

@@ -1,7 +1,8 @@
-$theme-colors: (
-    
-);
+$theme-colors: ();
 
 $enable-shadows: true;
 
-@import '~bootstrap/scss/bootstrap.scss';
+$font-family-base: "Quicksand";
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css?family=Nunito|Quicksand");

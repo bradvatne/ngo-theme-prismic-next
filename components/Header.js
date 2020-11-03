@@ -12,8 +12,8 @@ const Header = ({ header }) => {
     if (scrollY < 299 && stickyNav) setStickyNav(false);
   });
 
-  const stickyClass = "fixed-top w-100 bg-primary shadow-lg navbar-dark";
-  const normalClass = "fixed-top w-100 bg- shadow-lg navbar-dark";
+  const stickyClass = "fixed-top w-100 bg-primary navbar-dark";
+  const normalClass = "fixed-top w-100 bg-transparent navbar-dark";
   const toggleId = "basic-navbar-nav";
 
   return (

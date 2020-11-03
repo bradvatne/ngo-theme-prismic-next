@@ -16,9 +16,6 @@ const Header = ({ header }) => {
   const normalClass = "position-absolute w-100 bg-transparent";
   const toggleId = "basic-navbar-nav";
 
-  //render = render the component
-  //animate = trigger fade in animation, making the compononent visible
-
   return (
       <NavBar
         header={header}

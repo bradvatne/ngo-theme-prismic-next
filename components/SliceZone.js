@@ -3,6 +3,7 @@ import Values from "./Values";
 import MainProject from "./MainProject";
 import PicCarousel from "./PicCarousel";
 import Stats from "./Stats";
+import { Fade } from "react-awesome-reveal";
 
 const SliceZone = ({ slices }) => (
   <>
@@ -14,13 +15,17 @@ const SliceZone = ({ slices }) => (
               className={`section-quote slice-zone py-4`}
               key={`slice-${index}`}
             >
-              <Quote quote={slice.primary} />
+              <Fade>
+                <Quote quote={slice.primary} />
+              </Fade>
             </section>
           );
         case "values":
           return (
             <section className="section-values py-4" key={`slice-${index}`}>
-              <Values values={slice} key={`slice-${index}`} />
+              <Fade>
+                <Values values={slice} key={`slice-${index}`} />
+              </Fade>
             </section>
           );
         case "main_project":
@@ -29,19 +34,25 @@ const SliceZone = ({ slices }) => (
               className="section-main-project py-4"
               key={`slice-${index}`}
             >
-              <MainProject mainProject={slice} />
+              <Fade>
+                <MainProject mainProject={slice} />
+              </Fade>
             </section>
           );
         case "projects":
           return (
             <section className="section-projects py-4" key={`slice-${index}`}>
-              <PicCarousel projects={slice} />
+              <Fade>
+                <PicCarousel projects={slice} />
+              </Fade>
             </section>
           );
         case "statistics":
           return (
             <section className="section-statistics py-4" key={`slice-${index}`}>
-              <Stats stats={slice} />
+              <Fade>
+                <Stats stats={slice} />
+              </Fade>
             </section>
           );
       }

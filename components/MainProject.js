@@ -22,7 +22,7 @@ const MainProject = ({ mainProject }) => {
             <Button variant="primary" className="px-5 mx-3">
               {RichText.asText(mainProject.primary.main_project_button_1_label)}
             </Button>
-            <Button variant="outline-primary" className="px-5 mx-3">
+            <Button variant="outline-primary" className="px-5 mx-3 text-nowrap">
               {RichText.asText(mainProject.primary.main_project_button_2_label)}
             </Button>
           </div>

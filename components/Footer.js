@@ -31,9 +31,10 @@ const Footer = ({ footer, nav }) => {
 const SocialsWidget = ({ socials }) => (
   <Row className="d-flex justify-content-center py-3">
     {socials.socials_widget.map((item, index) => (
-      <Link href="/placeholder" className="text-light">
+      <Link href="/placeholder" className="text-light" key={index}>
         <a className="text-light px-2">
           <i
+            aria-hidden
             className={"fa-2x fab fa-" + item.socials_widget_icon.toLowerCase()}
           />
         </a>

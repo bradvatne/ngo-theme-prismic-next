@@ -20,7 +20,7 @@ const Values = ({ values }) => {
 const ValuesCards = ({ values }) =>
   values.map((item, key) => (
     <Col sm="12" md="3" key={key}>
-      <Fade triggerOnce> 
+      <Fade> 
         <img className="img-fluid" src={item.values_card_image.url} />
         <span className="text-center mb-3">
           <RichText render={item.values_card_title} />

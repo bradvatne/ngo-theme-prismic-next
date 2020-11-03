@@ -16,11 +16,9 @@ const PageBanner = ({ projects }) => {
         <Container className="d-flex flex-column h-100 justify-content-center pb-5">
           <div className="content text-center text-white">
             <RichText
-              htmlSerializer={htmlSerializer}
               render={projects.projects_title}
             />
             <RichText
-              htmlSerializer={htmlSerializer}
               render={projects.projects_tagline}
             />
             {RichText.asText(projects.banner_button_label)}

@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { RichText } from "prismic-reactjs";
 
-export const LatestProjects = ({ projects }) => {
+export const LatestPosts = ({ projects }) => {
   return (
     <section className="section-projects py-4">
       <Container>
@@ -48,4 +48,4 @@ export const LatestProjects = ({ projects }) => {
   );
 };
 
-export default LatestProjects;
+export default LatestPosts;

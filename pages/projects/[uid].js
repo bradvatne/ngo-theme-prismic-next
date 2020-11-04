@@ -2,7 +2,7 @@ import Prismic from "prismic-javascript";
 import { Client } from "../../prismic-configuration";
 import { PageBanner } from "../../components";
 import { Container, Col, Row } from "react-bootstrap";
-import DefaultLayout from "./../../layouts/index";
+import DefaultLayout from "../../layouts/index";
 import { RichText } from "prismic-reactjs";
 
 const Project = ({ project, header, footer }) => {
@@ -52,13 +52,13 @@ export async function getStaticPaths() {
   );
 
   //Pull UID's from projects and map to an array
-  const pathTest = projectsList.results.map(
-    (project) => `/project/${project.uid}`
+  const paths = projectsList.results.map(
+    (project) => `/projects/${project.uid}`
   );
 
   //Return paths as props
   return {
-    paths: projectsList.results.map((project) => `/project/${project.uid}`),
+    paths,
     fallback: true,
   };
 }

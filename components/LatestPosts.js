@@ -10,7 +10,7 @@ export const LatestPosts = ({ projects }) => {
             <div
               className="section-banner"
               style={{
-                backgroundImage: "url(" + projects[0].data.project_image.url + ")",
+                backgroundImage: "url(" + projects[0].data.image.url + ")",
                 height: "100%",
                 backgroundSize: "cover",
               }}
@@ -19,26 +19,17 @@ export const LatestPosts = ({ projects }) => {
           <Col md={3}>
             <Row>
               <Col className="p-2">
-                <img
-                  src={projects[1].data.project_image.url}
-                  className="img-fluid"
-                />
+                <img src={projects[1].data.image.url} className="img-fluid" />
               </Col>
             </Row>
             <Row>
               <Col className="p-2">
-                <img
-                  src={projects[2].data.project_image.url}
-                  className="img-fluid"
-                />
+                <img src={projects[2].data.image.url} className="img-fluid" />
               </Col>
             </Row>
             <Row>
               <Col className="p-2">
-                <img
-                  src={projects[1].data.project_image.url}
-                  className="img-fluid"
-                />
+                <img src={projects[3].data.image.url} className="img-fluid" />
               </Col>
             </Row>
           </Col>

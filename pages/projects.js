@@ -11,22 +11,22 @@ const Projects = ({ header, footer, projects, projectsPosts }) => {
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={projects.data} />
       <section className="projects-container py-4">
-      <Container>
-        <Row>
-          {projectsPosts.results.map((project) => (
-            <Col md={4} key={project.id}>
-              <Link
-                href={{
-                  pathname: "/posts/[slug]",
-                  query: { slug: project.slugs },
-                }}
-              >
-                <img className="img-fluid" src={project.data.project_image.url}/>
-              </Link>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+        <Container>
+          <Row>
+            {projectsPosts.results.map((project) => (
+              <Col md={4} key={project.id}>
+                <Link
+                  href={{
+                    pathname: "/projects/[uid]",
+                    query: { uid: project.uid },
+                  }}
+                >
+                  <img className="img-fluid" src={project.data.image.url} />
+                </Link>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </section>
     </DefaultLayout>
   );

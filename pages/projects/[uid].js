@@ -36,9 +36,9 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      project: project ? project : {},
-      header: header ? header : {},
-      footer: footer ? footer : {},
+      project,
+      header,
+      footer,
     },
   };
 }
@@ -59,8 +59,8 @@ export async function getStaticPaths() {
 
   //Return paths as props
   return {
-    paths: paths ? paths: {},
-    fallback: true,
+    paths,
+    fallback: false,
   };
 }
 

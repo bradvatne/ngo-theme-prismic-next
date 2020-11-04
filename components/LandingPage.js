@@ -1,4 +1,4 @@
-import { Banner, SliceZone, LatestPosts } from ".";
+import { Banner, SliceZone, LatestProjects } from ".";
 import DefaultLayout from "../layouts";
 
 const LandingPage = ({ header, home, footer, projects }) => (
@@ -6,7 +6,7 @@ const LandingPage = ({ header, home, footer, projects }) => (
     <section className="section-landing-page">
       <Banner banner={home.data} />
       <SliceZone slices={home.data.body} />
-        <LatestPosts projects={projects} />
+      <LatestProjects projects={projects} />
     </section>
   </DefaultLayout>
 );

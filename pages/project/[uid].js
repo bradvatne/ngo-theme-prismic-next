@@ -11,12 +11,16 @@ export async function getStaticProps({ params }) {
   //create client to query api
   const client = Client();
   //make sure params is correctly passed
-  // console.log("getStaticProps Params Test");
-  // console.log(params.uid);
+  console.log("getStaticProps Params Test");
+  console.log(params.uid);
 
   //
   //getByUid takes param of document type (project) and UID (params.uid) & returns a single page object matching the slug param
-  const project = await client.getByUID("project", params.uid);
+  const testPages = await client.getSingle('project');
+
+  console.log("Project Page Test");
+  console.log(testPages);
+  const project = await client.getByUID('project', params.uid);
 
   //test to see page object data
   console.log("getStaticProps Query Results: Should return a page object with");
@@ -40,17 +44,17 @@ export async function getStaticPaths() {
   //tests to see if project list is returned
 
   // console.log("Project List Tests: ");
-  // console.log(projectsList.results);
-  // console.log(projectsList.results[0].uid);
+  console.log(projectsList.results);
+  console.log(projectsList.results[0].uid);
   console.log("Path Test: Should return a url slug");
-  const pathTest = projectsList.results.map(
+  const paths = projectsList.results.map(
     (project) => `/project/${project.uid}`
   );
-  console.log(pathTest);
+  console.log(paths);
 
   return {
-    paths: projectsList.results.map((project) => `/project/${project.uid}`),
-    fallback: true,
+    paths,
+    fallback: false,
   };
 }
 

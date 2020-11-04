@@ -6,20 +6,21 @@ import DefaultLayout from "../../layouts/index";
 import { RichText } from "prismic-reactjs";
 
 const Project = ({ project, header, footer }) => {
-  return (
-    <DefaultLayout header={header} footer={footer}>
-      <PageBanner doc={project.data} />
-      <section className="project-section">
-        <Container>
-          <Row>
-            <Col>
-              <RichText render={project.data.content} />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-    </DefaultLayout>
-  );
+  if (project)
+    return (
+      <DefaultLayout header={header} footer={footer}>
+        <PageBanner doc={project.data} />
+        <section className="project-section">
+          <Container>
+            <Row>
+              <Col>
+                <RichText render={project.data.content} />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </DefaultLayout>
+    );
 };
 
 export async function getStaticProps({ params }) {

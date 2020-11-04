@@ -14,7 +14,7 @@ const Projects = ({ header, footer, projects, projectsPosts }) => {
         <Container>
           <Row>
             {projectsPosts.results.map((project) => (
-              <Col md={4} key={project.id}>
+              <Col md={6} key={project.id} className="py-3">
                 <Link
                   href={{
                     pathname: "/projects/[uid]",

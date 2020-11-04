@@ -9,7 +9,7 @@ import DefaultLayout from "../layouts";
 const Projects = ({ header, footer, projects, projectsPosts }) => {
   return (
     <DefaultLayout header={header} footer={footer}>
-      <PageBanner projects={projects.data} />
+      <PageBanner doc={projects.data} />
       <section className="projects-container py-4">
       <Container>
         <Row>

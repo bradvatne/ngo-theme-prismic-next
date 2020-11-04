@@ -2,13 +2,13 @@ import { Container } from "react-bootstrap";
 import { RichText } from "prismic-reactjs";
 import htmlSerializer from "../lib/htmlSerializer";
 
-const PageBanner = ({ projects }) => {
-  if (projects)
+const PageBanner = ({ doc }) => {
+  if (doc)
     return (
       <section
         className="section-banner"
         style={{
-          backgroundImage: "url(" + projects.projects_banner.url + ")",
+          backgroundImage: "url(" + doc.image.url + ")",
           height: "50vh",
           backgroundSize: "cover",
         }}
@@ -16,12 +16,12 @@ const PageBanner = ({ projects }) => {
         <Container className="d-flex flex-column h-100 justify-content-center pb-5">
           <div className="content text-center text-white">
             <RichText
-              render={projects.projects_title}
+              render={doc.title}
             />
             <RichText
-              render={projects.projects_tagline}
+              render={doc.tagline}
             />
-            {RichText.asText(projects.banner_button_label)}
+            {RichText.asText(doc.banner_button_label)}
           </div>
         </Container>
       </section>

@@ -40,23 +40,25 @@ const Header = ({ header }) => {
 };
 
 const NavBar = ({ header, navType, toggleId, animation }) => (
-  <animated.nav
-    className="navbar basic-navbar-nav navbar-expand-md fixed-top w-100 navbar-dark"
-    style={animation}
-    id={toggleId}
-  >
-    <Container>
-      <Navbar.Brand className="p-0">
-        <Link href="/">
-          <a className="text-white">{RichText.asText(header.brand_text)}</a>
-        </Link>
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls={toggleId} />
-      <Navbar.Collapse id={toggleId}>
-        <NavLinks navList={header.nav_item} />
-      </Navbar.Collapse>
-    </Container>
-  </animated.nav>
+  <animated.div className="fixed-top w-100 navbar-dark" style={animation}>
+    <Navbar
+      className="navbar basic-navbar-nav navbar-expand-md"
+      style={animation}
+      expand="md"
+    >
+      <Container>
+        <Navbar.Brand className="p-0">
+          <Link href="/">
+            <a className="text-white">{RichText.asText(header.brand_text)}</a>
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls={toggleId} />
+        <Navbar.Collapse id={toggleId}>
+          <NavLinks navList={header.nav_item} />
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  </animated.div>
 );
 
 const NavLinks = ({ navList }) => {

@@ -8,7 +8,7 @@ const Banner = ({ banner }) => {
       className="section-banner"
       style={{
         backgroundImage: "url(" + banner.banner_image.url + ")",
-        height: "50vh",
+        height: "75vh",
         backgroundSize: "cover",
       }}
     >

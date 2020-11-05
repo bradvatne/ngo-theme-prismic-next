@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import Link from "next/link";
 import { useSpring, animated } from "react-spring";
+import { Button } from "react-bootstrap";
 
 const Header = ({ header }) => {
   //Scroll position hook, scrollingNav true = opaque background, false = transparent
@@ -55,6 +56,12 @@ const NavBar = ({ header, navType, toggleId, animation }) => (
         <Navbar.Toggle aria-controls={toggleId} />
         <Navbar.Collapse id={toggleId}>
           <NavLinks navList={header.nav_item} />
+          <Button variant="outline-light" className="ml-2">
+            <span className="px-2">VOLUNTEER</span>
+          </Button>
+          <Button variant="light" className="ml-2">
+          <span className="px-2">DONATE</span>
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>

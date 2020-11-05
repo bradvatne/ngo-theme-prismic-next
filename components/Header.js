@@ -1,42 +1,61 @@
 import { RichText } from "prismic-reactjs";
-import { Navbar, Nav } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import { useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import Link from "next/link";
+import { useSpring, animated } from "react-spring";
 
 const Header = ({ header }) => {
-  const [stickyNav, setStickyNav] = useState(false);
+  //Style Variables
+  const toggleId = "basic-navbar-nav";
+  const scrollingStyle = {
+    backgroundColor: "rgba(0, 123, 255, 1)",
+  };
+  const normalStyle = {
+    backgroundColor: "rgba(0, 0, 0, 0)",
+  };
+
+  const [scrollingNav, setscrollingNav] = useState(false);
   useScrollPosition(({ currPos }) => {
     const scrollY = Math.abs(currPos.y);
-    if (scrollY > 300 && !stickyNav) setStickyNav(true);
-    if (scrollY < 299 && stickyNav) setStickyNav(false);
+    if (scrollY > 68 && !scrollingNav) setscrollingNav(true);
+    if (scrollY < 11 && scrollingNav) setscrollingNav(false);
   });
 
-  const stickyClass = "fixed-top w-100 bg-primary navbar-dark";
-  const normalClass = "fixed-top w-100 bg-transparent navbar-dark";
-  const toggleId = "basic-navbar-nav";
+  //Animation hook
+  const animation = useSpring(scrollingNav ? scrollingStyle : normalStyle);
+
+  //Scroll position hook
+  //scrollingNav == false : navBar transparent background, slight offset from top
+  //scrollingNav === true : navBar has opaque background, offset from top removed
 
   return (
-      <NavBar
-        header={header}
-        navType={stickyNav ? stickyClass : normalClass}
-        toggleId={toggleId}
-      />
+    <NavBar
+      header={header}
+      navType={normalStyle}
+      toggleId={toggleId}
+      animation={animation}
+    />
   );
 };
 
-const NavBar = ({ header, navType, toggleId }) => (
-  <Navbar expand="md" className={navType}>
-    <Navbar.Brand>
-      <Link href="/">
-        <a className="text-white">{RichText.asText(header.brand_text)}</a>
-      </Link>
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls={toggleId} />
-    <Navbar.Collapse id={toggleId}>
-      <NavLinks navList={header.nav_item} />
-    </Navbar.Collapse>
-  </Navbar>
+const NavBar = ({ header, navType, toggleId, animation }) => (
+  <animated.div
+    className="navbar navbar-expand-md fixed-top w-100 navbar-dark"
+    style={animation}
+  >
+    <Container>
+      <Navbar.Brand className="p-0">
+        <Link href="/">
+          <a className="text-white">{RichText.asText(header.brand_text)}</a>
+        </Link>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls={toggleId} />
+      <Navbar.Collapse id={toggleId}>
+        <NavLinks navList={header.nav_item} />
+      </Navbar.Collapse>
+    </Container>
+  </animated.div>
 );
 
 const NavLinks = ({ navList }) => {
@@ -44,7 +63,7 @@ const NavLinks = ({ navList }) => {
     <Nav className="ml-auto">
       {navList.map((navItem, index) => (
         <Link href={navItem.link.type} key={index}>
-          <a className="text-white p-2">{RichText.asText(navItem.label)}</a>
+          <a className="text-white pl-2">{RichText.asText(navItem.label)}</a>
         </Link>
       ))}
     </Nav>

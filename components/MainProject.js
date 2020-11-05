@@ -8,7 +8,7 @@ const MainProject = ({ mainProject }) => {
         <Col
           sm="12"
           md="6"
-          className="d-flex flex-column justify-content-center text-center"
+          className="d-flex flex-column justify-content-center"
         >
           <RichText render={mainProject.primary.main_project_title} />
         </Col>

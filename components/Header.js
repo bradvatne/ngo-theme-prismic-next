@@ -10,16 +10,20 @@ const Header = ({ header }) => {
   const toggleId = "basic-navbar-nav";
   const scrollingStyle = {
     backgroundColor: "rgba(0, 123, 255, 1)",
+    paddingBottom: "15px",
+    paddingTop: "15px"
   };
   const normalStyle = {
     backgroundColor: "rgba(0, 0, 0, 0)",
+    paddingBottom: "40px",
+    paddingTop: "30px",
   };
 
   const [scrollingNav, setscrollingNav] = useState(false);
   useScrollPosition(({ currPos }) => {
     const scrollY = Math.abs(currPos.y);
     if (scrollY > 68 && !scrollingNav) setscrollingNav(true);
-    if (scrollY < 11 && scrollingNav) setscrollingNav(false);
+    if (scrollY < 69 && scrollingNav) setscrollingNav(false);
   });
 
   //Animation hook

@@ -6,19 +6,7 @@ import Link from "next/link";
 import { useSpring, animated } from "react-spring";
 
 const Header = ({ header }) => {
-  //Style Variables
-  const toggleId = "basic-navbar-nav";
-  const scrollingStyle = {
-    backgroundColor: "rgba(0, 123, 255, 1)",
-    paddingBottom: "15px",
-    paddingTop: "15px"
-  };
-  const normalStyle = {
-    backgroundColor: "rgba(0, 0, 0, 0)",
-    paddingBottom: "40px",
-    paddingTop: "30px",
-  };
-
+  //Scroll position hook, scrollingNav true = opaque background, false = transparent
   const [scrollingNav, setscrollingNav] = useState(false);
   useScrollPosition(({ currPos }) => {
     const scrollY = Math.abs(currPos.y);
@@ -26,12 +14,20 @@ const Header = ({ header }) => {
     if (scrollY < 69 && scrollingNav) setscrollingNav(false);
   });
 
+  //Style Variables
+  const toggleId = "basic-navbar-nav";
+  const scrollingStyle = {
+    backgroundColor: "rgba(0, 123, 255, 1)",
+    paddingBottom: "15px",
+    paddingTop: "15px",
+  };
+  const normalStyle = {
+    backgroundColor: "rgba(0, 0, 0, 0)",
+    paddingBottom: "40px",
+    paddingTop: "30px",
+  };
   //Animation hook
   const animation = useSpring(scrollingNav ? scrollingStyle : normalStyle);
-
-  //Scroll position hook
-  //scrollingNav == false : navBar transparent background, slight offset from top
-  //scrollingNav === true : navBar has opaque background, offset from top removed
 
   return (
     <NavBar
@@ -44,9 +40,10 @@ const Header = ({ header }) => {
 };
 
 const NavBar = ({ header, navType, toggleId, animation }) => (
-  <animated.div
-    className="navbar navbar-expand-md fixed-top w-100 navbar-dark"
+  <animated.nav
+    className="navbar basic-navbar-nav navbar-expand-md fixed-top w-100 navbar-dark"
     style={animation}
+    id={toggleId}
   >
     <Container>
       <Navbar.Brand className="p-0">
@@ -59,7 +56,7 @@ const NavBar = ({ header, navType, toggleId, animation }) => (
         <NavLinks navList={header.nav_item} />
       </Navbar.Collapse>
     </Container>
-  </animated.div>
+  </animated.nav>
 );
 
 const NavLinks = ({ navList }) => {

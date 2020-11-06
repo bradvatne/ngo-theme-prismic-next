@@ -26,7 +26,7 @@ const FeaturedProjects = ({ projects }) => {
                   className="d-flex flex-column justify-content-center"
                 >
                   <Fade duration={1500}>
-                    <Slide direction="up">
+                    <Slide direction="down">
                       <div>
                         <RichText render={item.data.content} />
                       </div>

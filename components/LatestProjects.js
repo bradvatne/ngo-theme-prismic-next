@@ -10,7 +10,7 @@ export const LatestProjects = ({ projects }) => {
             <div
               className="section-banner"
               style={{
-                backgroundImage: "url(" + projects[0].data.image.url + ")",
+                backgroundImage: "url(" + projects[2].data.image.url + ")",
                 height: "100%",
                 backgroundSize: "cover",
               }}
@@ -24,7 +24,7 @@ export const LatestProjects = ({ projects }) => {
             </Row>
             <Row>
               <Col className="p-2">
-                <img src={projects[2].data.image.url} className="img-fluid" />
+                <img src={projects[0].data.image.url} className="img-fluid" />
               </Col>
             </Row>
             <Row>

@@ -1,6 +1,7 @@
 import { Button, Row, Form, Col, Container } from "react-bootstrap";
 import { RichText } from "prismic-reactjs";
 import Link from "next/link";
+import { Fade } from "react-awesome-reveal";
 
 const Footer = ({ footer, nav }) => {
   return (
@@ -8,11 +9,18 @@ const Footer = ({ footer, nav }) => {
       <Container>
         <Row className="d-flex justify-content-between">
           <Col md="6">
-            <RichText render={footer.brand_name} />
-            <RichText render={footer.brand_description} />
+            <Fade duration={1500}>
+              <div>
+                <RichText render={footer.brand_name} />
+                <RichText render={footer.brand_description} />
+              </div>
+            </Fade>
           </Col>
           <Col md="3">
+            <Fade duration={1500}>
+              <div>
             <RichText render={footer.email_capture_title} />
+              </div>
             <Form>
               <Form.Control className="my-2" placeholder="Email Address" />
               <Form.Control className="my-2" placeholder="Name" />
@@ -25,6 +33,7 @@ const Footer = ({ footer, nav }) => {
               </Button>
             </Form>
             <SocialsWidget socials={footer} />
+            </Fade>
           </Col>
         </Row>
       </Container>

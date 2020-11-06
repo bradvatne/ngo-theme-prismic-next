@@ -20,7 +20,11 @@ const FeaturedProjects = ({ projects }) => {
                       duration={1500}
                       direction={index === 1 ? "right" : "left"}
                     >
-                      <img src={item.data.image.url} className="img-fluid" />
+                      <img
+                        src={item.data.image.url}
+                        className="img-fluid"
+                        style={{ zIndex: "999" }}
+                      />
                     </Slide>
                   </Fade>
                 </Col>
@@ -32,7 +36,7 @@ const FeaturedProjects = ({ projects }) => {
                   }
                 >
                   <Fade duration={1500} direction="down">
-                    <div>
+                    <div style={{ zIndex: 3 }}>
                       <RichText render={item.data.title} />
                       <RichText render={item.data.content} />
                     </div>

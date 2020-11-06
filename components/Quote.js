@@ -1,6 +1,6 @@
 import { RichText } from "prismic-reactjs";
 import { Container, Button, Row, Col } from "react-bootstrap";
-import { Slide, Fade } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 const Quote = ({ quote }) => (
   <Container>
@@ -11,7 +11,7 @@ const Quote = ({ quote }) => (
             <RichText render={quote.quote} />
           </div>
         </Fade>
-        <Fade duration={1500} delay={1500}>
+        <Fade duration={1500} delay={1000}>
           <div>
             <Button variant="outline-blu" className="px-3">
               {RichText.asText(quote.quote_button_label)}

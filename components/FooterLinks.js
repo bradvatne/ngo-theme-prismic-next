@@ -15,7 +15,10 @@ const FooterLinksList = ({ footerLinks }) => {
   return (
     <>
       {footerLinks.map((item, index) => (
-          <a key={index}>{RichText.asText(item.footer_link_block_label)}<br/></a>
+        <a key={index}>
+          {RichText.asText(item.footer_link_block_label)}
+          <br />
+        </a>
       ))}
     </>
   );

@@ -3,6 +3,8 @@ $enable-shadows: true;
 $custom-font: #5d5c61;
 $custom-bg: #e3e2df;
 $custom-footer: #557a95;
+$font-family-serif: "Montserrat";
+$font-family-sans-serif: "Montserrat";
 
 $theme-colors: (
   "custom-font": $custom-font,
@@ -20,4 +22,10 @@ body {
   padding-bottom: 50px;
 }
 
+.hero-text {
+  position: relative;
+  top: 30%;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import "~bootstrap/scss/bootstrap.scss";

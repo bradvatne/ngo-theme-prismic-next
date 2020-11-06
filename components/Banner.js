@@ -10,12 +10,13 @@ const Banner = ({ banner }) => {
         className="section-banner"
         style={{
           backgroundImage: "url(" + banner.banner_image.url + ")",
+          backgroundPosition: "bottom",
           height: "100vh",
           backgroundSize: "cover",
         }}
       >
-        <Container className="d-flex flex-column h-100 justify-content-center pb-5">
-          <div className="content text-white">
+        <Container className="d-flex flex-column h-100 pb-5">
+          <div className="hero-text text-white">
             <RichText render={banner.banner_title} />
             <RichText render={banner.banner_tagline} />
             <div>{RichText.asText(banner.banner_button_label)}</div>

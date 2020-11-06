@@ -56,12 +56,14 @@ const NavBar = ({ header, navType, toggleId, animation }) => (
         <Navbar.Toggle aria-controls={toggleId} />
         <Navbar.Collapse id={toggleId}>
           <NavLinks navList={header.nav_item} />
-          <Button variant="outline-light" className="ml-2">
-            <span className="px-2">VOLUNTEER</span>
-          </Button>
-          <Button variant="light" className="ml-2">
-          <span className="px-2">DONATE</span>
-          </Button>
+          <div className="d-flex flex-column flex-lg-row text-sm-center">
+            <Button variant="outline-light" className="ml-lg-2 w-50">
+              <span className="px-2">Volunteer</span>
+            </Button>
+            <Button variant="light" className="ml-lg-2 w-50">
+              <span className="px-2">Donate</span>
+            </Button>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -13,7 +13,7 @@ const Quote = ({ quote }) => (
             </div>
           </Slide>
         </Fade>
-        <Fade duration={1500} delay={700}>
+        <Fade duration={1500} delay={1500}>
           <div>
             <Button variant="primary" className="px-3">
               {RichText.asText(quote.quote_button_label)}
@@ -28,12 +28,10 @@ const Quote = ({ quote }) => (
               src={quote.author_portrait.url}
               className="img-fluid w-50 rounded-circle shadow-lg"
             />
-          </Slide>
-        </Fade>
-        <Fade delay={700} duration={1500}>
           <div>
             <RichText render={quote.author} />
           </div>
+          </Slide>
         </Fade>
       </Col>
     </Row>

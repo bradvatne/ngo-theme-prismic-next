@@ -28,6 +28,7 @@ const MainProject = ({ mainProject }) => {
             <Slide direction="right" duration="1500">
               <div>
                 <RichText render={mainProject.primary.main_project_text} />
+                <Fade delay={1500} duration={1500}>
                 <div className="d-flex flex-row justify-content-center">
                   <Button variant="primary" className="px-5 mx-3">
                     {RichText.asText(
@@ -41,9 +42,11 @@ const MainProject = ({ mainProject }) => {
                     {RichText.asText(
                       mainProject.primary.main_project_button_2_label
                     )}
-                  </Button>
+                    </Button>
                 </div>
+                </Fade>
               </div>
+              
             </Slide>
           </Fade>
         </Col>

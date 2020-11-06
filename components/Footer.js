@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = ({ footer, nav }) => {
   return (
-    <section className="section-footer bg-primary text-light pt-3">
+    <section className="section section-footer bg-custom-footer text-light">
       <Container>
         <Row className="d-flex justify-content-between">
           <Col md="6">
@@ -16,13 +16,17 @@ const Footer = ({ footer, nav }) => {
             <Form>
               <Form.Control className="my-2" placeholder="Email Address" />
               <Form.Control className="my-2" placeholder="Name" />
-              <Button className="my-2" className="btn-outline-light w-100">
+              <Button
+                variant="outline-light"
+                className="my-2"
+                className="w-100"
+              >
                 Submit
               </Button>
             </Form>
+            <SocialsWidget socials={footer} />
           </Col>
         </Row>
-        <SocialsWidget socials={footer} />
       </Container>
     </section>
   );

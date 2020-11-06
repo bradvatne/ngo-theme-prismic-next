@@ -19,12 +19,12 @@ const Values = ({ values }) => {
 
 const ValuesCards = ({ values }) =>
   values.map((item, key) => (
-    <Col sm="12" md="3" key={key}>
-      <Fade duration="1500" delay={key*200}>
+    <Col sm={12} md={6} key={key}>
+      <Fade duration="1500" delay={key * 200}>
         <img className="img-fluid" src={item.values_card_image.url} />
-        <span className="text-center mb-3">
+        <div className="text-center py-3">
           <RichText render={item.values_card_title} />
-        </span>
+        </div>
         <div>
           <RichText render={item.values_card_text} />
         </div>

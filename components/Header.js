@@ -18,7 +18,7 @@ const Header = ({ header }) => {
   //Style Variables
   const toggleId = "basic-navbar-nav";
   const scrollingStyle = {
-    backgroundColor: "rgba(0, 123, 255, 1)",
+    backgroundColor: "rgba(101,157,189, 1)",
     paddingBottom: "15px",
     paddingTop: "15px",
   };

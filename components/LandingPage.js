@@ -7,7 +7,6 @@ const LandingPage = ({ header, home, footer, projects }) => (
       <Banner banner={home.data} />
       <SliceZone slices={home.data.body} />
       <FeaturedProjects projects={projects} />
-      <LatestProjects projects={projects} />
     </section>
   </DefaultLayout>
 );

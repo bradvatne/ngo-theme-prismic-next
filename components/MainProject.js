@@ -29,24 +29,23 @@ const MainProject = ({ mainProject }) => {
               <div>
                 <RichText render={mainProject.primary.main_project_text} />
                 <Fade delay={1500} duration={1500}>
-                <div className="d-flex flex-row justify-content-center">
-                  <Button variant="primary" className="px-5 mx-3">
-                    {RichText.asText(
-                      mainProject.primary.main_project_button_1_label
-                    )}
-                  </Button>
-                  <Button
-                    variant="outline-primary"
-                    className="px-5 mx-3 text-nowrap"
-                  >
-                    {RichText.asText(
-                      mainProject.primary.main_project_button_2_label
-                    )}
+                  <div className="d-flex flex-row justify-content-center">
+                    <Button variant="outline-blu" className="px-5 mx-3">
+                      {RichText.asText(
+                        mainProject.primary.main_project_button_1_label
+                      )}
                     </Button>
-                </div>
+                    <Button
+                      variant="outline-blu"
+                      className="px-5 mx-3 text-nowrap"
+                    >
+                      {RichText.asText(
+                        mainProject.primary.main_project_button_2_label
+                      )}
+                    </Button>
+                  </div>
                 </Fade>
               </div>
-              
             </Slide>
           </Fade>
         </Col>

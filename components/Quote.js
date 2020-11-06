@@ -7,31 +7,27 @@ const Quote = ({ quote }) => (
     <Row className="d-flex flex-column-reverse flex-md-row text-center">
       <Col sm="12" md="7" className="d-flex flex-column justify-content-center">
         <Fade duration={1500}>
-          <Slide duration={1500} direction="down">
-            <div>
-              <RichText render={quote.quote} />
-            </div>
-          </Slide>
+          <div>
+            <RichText render={quote.quote} />
+          </div>
         </Fade>
         <Fade duration={1500} delay={1500}>
           <div>
-            <Button variant="primary" className="px-3">
+            <Button variant="outline-blu" className="px-3">
               {RichText.asText(quote.quote_button_label)}
             </Button>
           </div>
         </Fade>
       </Col>
       <Col sm="12" md="5">
-        <Fade duration={1500}>
-          <Slide duration={1500} direction="down">
-            <img
-              src={quote.author_portrait.url}
-              className="img-fluid w-50 rounded-circle shadow-lg"
-            />
+        <Fade duration={1500} fraction={0.5}>
+          <img
+            src={quote.author_portrait.url}
+            className="img-fluid w-50 rounded-circle shadow-lg"
+          />
           <div>
             <RichText render={quote.author} />
           </div>
-          </Slide>
         </Fade>
       </Col>
     </Row>

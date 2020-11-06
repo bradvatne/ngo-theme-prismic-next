@@ -4,7 +4,7 @@ import MainProject from "./MainProject";
 import PicCarousel from "./PicCarousel";
 import Stats from "./Stats";
 
-const Animate = () => (<div></div>)
+const Animate = () => <div></div>;
 
 const SliceZone = ({ slices }) => (
   <>
@@ -13,37 +13,47 @@ const SliceZone = ({ slices }) => (
         case "quote":
           return (
             <section
-              className={`section-quote slice-zone py-4`}
+              className={`section-quote slice-zone section`}
               key={`slice-${index}`}
             >
-                <Quote quote={slice.primary} />
+              <Quote quote={slice.primary} />
             </section>
           );
         case "values":
+          if (slice) return;
           return (
-            <section className="section-values py-4" key={`slice-${index}`}>
-                <Values values={slice} key={`slice-${index}`} />
+            <section
+              className="section-values section bg-clr"
+              key={`slice-${index}`}
+            >
+              <Values values={slice} key={`slice-${index}`} />
             </section>
           );
         case "main_project":
           return (
             <section
-              className="section-main-project py-4"
+              className="section-main-project section bg-light"
               key={`slice-${index}`}
             >
-                <MainProject mainProject={slice} />
+              <MainProject mainProject={slice} />
             </section>
           );
         case "projects":
           return (
-            <section className="section-projects py-4" key={`slice-${index}`}>
-                <PicCarousel projects={slice} />
+            <section
+              className="section-projects section"
+              key={`slice-${index}`}
+            >
+              <PicCarousel projects={slice} />
             </section>
           );
         case "statistics":
           return (
-            <section className="section-statistics py-4" key={`slice-${index}`}>
-                <Stats stats={slice} />
+            <section
+              className="section-statistics section"
+              key={`slice-${index}`}
+            >
+              <Stats stats={slice} />
             </section>
           );
       }

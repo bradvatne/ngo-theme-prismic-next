@@ -1,0 +1,23 @@
+$enable-shadows: true;
+
+$custom-font: #5d5c61;
+$custom-bg: #e3e2df;
+$custom-footer: #557a95;
+
+$theme-colors: (
+  "custom-font": $custom-font,
+  "custom-bg": $custom-bg,
+  "custom-footer": $custom-footer,
+  "blu": #659dbd,
+);
+
+body {
+  color: $custom-font !important;
+}
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@import "~bootstrap/scss/bootstrap.scss";

@@ -9,7 +9,7 @@ const Footer = ({ footer, nav }) => {
       <Container>
         <Row className="d-flex justify-content-between">
           <Col md="6">
-            <Fade duration={1500}>
+            <Fade triggerOnce>
               <div>
                 <RichText render={footer.brand_name} />
                 <RichText render={footer.brand_description} />
@@ -17,7 +17,7 @@ const Footer = ({ footer, nav }) => {
             </Fade>
           </Col>
           <Col md="3">
-            <Fade duration={1500}>
+            <Fade triggerOnce>
               <div>
             <RichText render={footer.email_capture_title} />
               </div>

@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Banner = ({ banner }) => {
   return (
-    <Fade>
+    <Fade triggerOnce>
       <section
         className="section-banner"
         style={{

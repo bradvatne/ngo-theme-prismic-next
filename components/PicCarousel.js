@@ -10,7 +10,7 @@ const PicCarousel = ({ projects }) => {
         <RichText htmlSerializer={htmlSerializer} render={projects.primary.projects_title} />
          <RichText render={projects.primary.projects_description} /> 
       </div>*/}
-      <Fade duration={1500}>
+      <Fade triggerOnce>
         <Carousel>
           {projects.items.map((item, index) => (
             <Carousel.Item key={index}>

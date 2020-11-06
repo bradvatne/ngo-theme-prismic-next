@@ -11,8 +11,8 @@ const MainProject = ({ mainProject }) => {
           md="6"
           className="d-flex flex-column justify-content-center"
         >
-          <Fade duration="1500">
-            <Slide direction="left" duration="1500">
+          <Fade triggerOnce>
+            <Slide direction="left" triggerOnce>
               <div>
                 <RichText render={mainProject.primary.main_project_title} />
               </div>
@@ -24,11 +24,11 @@ const MainProject = ({ mainProject }) => {
           md="6"
           className="d-flex flex-column justify-content-center"
         >
-          <Fade duration="1500">
-            <Slide direction="right" duration="1500">
+          <Fade triggerOnce>
+            <Slide direction="right" triggerOnce>
               <div>
                 <RichText render={mainProject.primary.main_project_text} />
-                <Fade delay={1000} duration={1500}>
+                <Fade triggerOnce>
                   <div className="d-flex flex-row justify-content-center">
                     <Button variant="outline-blu" className="px-5 mx-3">
                       {RichText.asText(

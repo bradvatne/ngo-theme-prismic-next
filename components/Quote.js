@@ -6,12 +6,12 @@ const Quote = ({ quote }) => (
   <Container>
     <Row className="d-flex flex-column-reverse flex-md-row text-center">
       <Col sm="12" md="7" className="d-flex flex-column justify-content-center">
-        <Fade duration={1500}>
+        <Fade triggerOnce>
           <div>
             <RichText render={quote.quote} />
           </div>
         </Fade>
-        <Fade duration={1500} delay={1000}>
+        <Fade triggerOnce>
           <div>
             <Button variant="outline-blu" className="px-3">
               {RichText.asText(quote.quote_button_label)}
@@ -20,7 +20,7 @@ const Quote = ({ quote }) => (
         </Fade>
       </Col>
       <Col sm="12" md="5">
-        <Fade duration={1500} fraction={0.5}>
+        <Fade triggerOnce>
           <img
             src={quote.author_portrait.url}
             className="img-fluid w-50 rounded-circle shadow-lg"

@@ -11,10 +11,11 @@ const PageBanner = ({ doc }) => {
           backgroundImage: "url(" + doc.image.url + ")",
           height: "50vh",
           backgroundSize: "cover",
+          backgroundPosition: "bottom"
         }}
       >
         <Container className="d-flex flex-column h-100 justify-content-center pb-5">
-          <div className="content text-center text-white">
+          <div className="content text-white">
             <RichText
               render={doc.title}
             />

@@ -19,7 +19,7 @@ const FeaturedProjects = ({ projects }) => {
                     <Slide triggerOnce direction={index === 1 ? "right" : "left"}>
                       <img
                         src={item.data.image.url}
-                        className="img-fluid"
+                        className="img-fluid shadow-lg"
                         style={{ zIndex: "999" }}
                       />
                     </Slide>

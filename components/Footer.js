@@ -12,6 +12,7 @@ const Footer = ({ footer, nav }) => {
             <Fade triggerOnce>
               <div>
                 <RichText render={footer.brand_name} />
+                <hr />
                 <RichText render={footer.brand_description} />
               </div>
             </Fade>
@@ -19,20 +20,21 @@ const Footer = ({ footer, nav }) => {
           <Col md="3">
             <Fade triggerOnce>
               <div>
-            <RichText render={footer.email_capture_title} />
+                <RichText render={footer.email_capture_title} />
               </div>
-            <Form>
-              <Form.Control className="my-2" placeholder="Email Address" />
-              <Form.Control className="my-2" placeholder="Name" />
-              <Button
-                variant="outline-light"
-                className="my-2"
-                className="w-100"
-              >
-                Submit
-              </Button>
-            </Form>
-            <SocialsWidget socials={footer} />
+              <hr />
+              <Form>
+                <Form.Control className="my-2" placeholder="Email Address" />
+                <Form.Control className="my-2" placeholder="Name" />
+                <Button
+                  variant="outline-light"
+                  className="my-2"
+                  className="w-100"
+                >
+                  Submit
+                </Button>
+              </Form>
+              <SocialsWidget socials={footer} />
             </Fade>
           </Col>
         </Row>

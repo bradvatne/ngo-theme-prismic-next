@@ -21,7 +21,7 @@ const Projects = ({ header, footer, projects, projectsPosts }) => {
                     query: { uid: project.uid },
                   }}
                 >
-                  <img className="img-fluid" src={project.data.image.url} />
+                  <img className="img-fluid shadow-lg" src={project.data.image.url} />
                 </Link>
               </Col>
             ))}

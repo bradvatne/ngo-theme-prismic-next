@@ -3,8 +3,7 @@ import Values from "./Values";
 import MainProject from "./MainProject";
 import PicCarousel from "./PicCarousel";
 import Stats from "./Stats";
-
-const Animate = () => <div></div>;
+import BrandIcons from "./BrandIcons"
 
 const SliceZone = ({ slices }) => (
   <>
@@ -54,6 +53,16 @@ const SliceZone = ({ slices }) => (
               key={`slice-${index}`}
             >
               <Stats stats={slice} />
+            </section>
+          );
+          case "icon_section":
+          console.log('DING')
+          return (
+            <section
+              className="section-brand-icons section"
+              key={`slice-${index}`}
+            >
+              <BrandIcons doc={slice} />
             </section>
           );
       }

@@ -11,7 +11,7 @@ const Projects = ({ header, footer, projects, projectsPosts }) => {
   return (
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={projects.data} />
-      <section className="projects-container py-4">
+      <section className="section section-projects-page py-4">
         <Container>
           <Row>
             {projectsPosts.results.map((project, index) => (

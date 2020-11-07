@@ -39,12 +39,12 @@ const Header = ({ header }) => {
 const NavBar = ({ header, scrollingNav, toggleId, animation }) => (
   <animated.div
     className={
-      "fixed-top w-100 navbar-dark p-0 m-0" + (scrollingNav ? " shadow-lg" : "")
+      "fixed-top w-100 navbar-dark p-0 m-0" + (scrollingNav ? " shadow-md" : "")
     }
     style={animation}
   >
     <Navbar
-      className="navbar basic-navbar-nav navbar-expand-md p-lg-0 m-lg-0"
+      className="navbar basic-navbar-nav navbar-expand-md p-md-0 m-md-0"
       style={animation}
       expand="md"
     >
@@ -57,14 +57,14 @@ const NavBar = ({ header, scrollingNav, toggleId, animation }) => (
         <Navbar.Toggle aria-controls={toggleId} />
         <Navbar.Collapse id={toggleId}>
           <NavLinks navList={header.nav_item} />
-          <div className="d-flex flex-column align-items-center flex-lg-row">
+          <div className="d-flex flex-column align-items-center flex-md-row">
             <Button
               variant="outline-light"
-              className="mb-3 mb-lg-0 ml-lg-2 w-50"
+              className="mb-3 mb-md-0 ml-md-2 w-50"
             >
               <span className="px-2">Volunteer</span>
             </Button>
-            <Button variant="light" className="mb-3 mb-lg-0 ml-lg-2 w-50">
+            <Button variant="light" className="mb-3 mb-md-0 ml-md-2 w-50">
               <span className="px-2">Donate</span>
             </Button>
           </div>
@@ -79,7 +79,7 @@ const NavLinks = ({ navList }) => {
     <Nav className="ml-auto">
       {navList.map((navItem, index) => (
         <Link href={navItem.link.type} key={index}>
-          <a className="text-white p-3 text-center text-lg-left">
+          <a className="text-white p-3 text-center text-md-left">
             {RichText.asText(navItem.label)}
           </a>
         </Link>

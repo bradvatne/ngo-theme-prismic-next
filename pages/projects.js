@@ -16,7 +16,7 @@ const Projects = ({ header, footer, projects, projectsPosts }) => {
           <Row>
             {projectsPosts.results.map((project, index) => (
               <Col md={6} key={project.id} className="py-3">
-                <Fade delay={index * 250}>
+                <Fade triggerOnce delay={index * 250}>
                   <Link
                     href={{
                       pathname: "/projects/[uid]",

@@ -5,6 +5,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import Link from "next/link";
 import { useSpring, animated } from "react-spring";
 import { Button } from "react-bootstrap";
+import Logo from '../public/logo.svg'
 
 const Header = ({ header }) => {
   //Scroll position hook, scrollingNav true = opaque background, false = transparent
@@ -49,9 +50,9 @@ const NavBar = ({ header, scrollingNav, toggleId, animation }) => (
       expand="md"
     >
       <Container>
-        <Navbar.Brand className="p-0">
+        <Navbar.Brand className="p-0 p-lg-2">
           <Link href="/">
-            <a className="text-white">{RichText.asText(header.brand_text)}</a>
+            <a className="text-white"><Logo className="logo"/></a>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={toggleId} />

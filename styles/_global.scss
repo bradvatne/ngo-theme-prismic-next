@@ -13,9 +13,17 @@ $theme-colors: (
   "blu": #659dbd,
 );
 
+//Page styles
 body {
   color: $custom-font !important;
 }
+//Header styles
+
+.logo g{
+  fill: white;
+}
+
+//Section styles
 
 .section {
   padding-top: 50px;
@@ -26,6 +34,8 @@ body {
   position: relative;
   top: 30%;
 }
+
+//Hover Styles
 
 .hovereffect {
   width: 100%;
@@ -49,8 +59,7 @@ body {
   padding: 3em;
   text-align: left;
 }
-//HOVER EFFECT START
-//---------------------
+
 .hovereffect img {
   display: block;
   position: relative;

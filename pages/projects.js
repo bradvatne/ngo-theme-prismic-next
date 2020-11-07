@@ -5,6 +5,7 @@ import { RichText } from "prismic-reactjs";
 import { PageBanner } from "../components";
 import { Container, Row, Col } from "react-bootstrap";
 import DefaultLayout from "../layouts";
+import { Fade } from "react-awesome-reveal";
 
 const Projects = ({ header, footer, projects, projectsPosts }) => {
   return (
@@ -13,16 +14,26 @@ const Projects = ({ header, footer, projects, projectsPosts }) => {
       <section className="projects-container py-4">
         <Container>
           <Row>
-            {projectsPosts.results.map((project) => (
+            {projectsPosts.results.map((project, index) => (
               <Col md={6} key={project.id} className="py-3">
-                <Link
-                  href={{
-                    pathname: "/projects/[uid]",
-                    query: { uid: project.uid },
-                  }}
-                >
-                  <img className="img-fluid shadow-lg" src={project.data.image.url} />
-                </Link>
+                <Fade delay={index * 250}>
+                  <Link
+                    href={{
+                      pathname: "/projects/[uid]",
+                      query: { uid: project.uid },
+                    }}
+                  >
+                    <a className="hovereffect">
+                      <img
+                        className="img-fluid shadow-lg"
+                        src={project.data.image.url}
+                      />
+                      <div className="overlay text-white">
+                        <RichText render={project.data.title} />
+                      </div>
+                    </a>
+                  </Link>
+                </Fade>
               </Col>
             ))}
           </Row>

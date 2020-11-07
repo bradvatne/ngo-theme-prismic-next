@@ -10,7 +10,7 @@ const Project = ({ project, header, footer }) => {
     return (
       <DefaultLayout header={header} footer={footer}>
         <PageBanner doc={project.data} />
-        <section className="project-section">
+        <section className="project-section section">
           <Container>
             <Row>
               <Col>

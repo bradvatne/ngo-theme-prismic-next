@@ -8,16 +8,14 @@ import { Button } from "react-bootstrap";
 import Logo from "../public/logo.svg";
 
 const Header = ({ header }) => {
-  //Scroll position hook, scrollingNav true = opaque background, false = transparent
-  const [scrollingNav, setScrollingNav] = useState(false);
+  //Scroll position hook, hideNav true = opaque background, false = transparent
+  const [hideNav, setHideNav] = useState(false);
   useScrollPosition(({ prevPos, currPos }) => {
-    if (prevPos.y > currPos.y && !scrollingNav) {
-      setScrollingNav(true);
-      console.log("set to true: " + scrollingNav);
+    if (prevPos.y > currPos.y) {
+      setHideNav(true);
     }
-    if (prevPos.y < currPos.y && scrollingNav) {
-      setScrollingNav(false);
-      console.log("set to false: " + scrollingNav);
+    if (prevPos.y < currPos.y ) {
+      setHideNav(false);
     }
   });
 
@@ -29,18 +27,18 @@ const Header = ({ header }) => {
     transform: "translateY(0)",
   };
   //Animation hook
-  const animation = useSpring(scrollingNav ? scrollingStyle : normalStyle);
+  const animation = useSpring(hideNav ? scrollingStyle : normalStyle);
 
   return (
-    <NavBar header={header} animation={animation} scrollingNav={scrollingNav} />
+    <NavBar header={header} animation={animation} hideNav={hideNav} />
   );
 };
 
-const NavBar = ({ header, scrollingNav, animation }) => (
+const NavBar = ({ header, hideNav, animation }) => (
   <animated.div
     className={
       "fixed-top bg-blu w-100 navbar-dark p-0 m-0" +
-      (scrollingNav ? " shadow-lg" : "")
+      (hideNav ? " shadow-lg" : "")
     }
     style={animation}
   >

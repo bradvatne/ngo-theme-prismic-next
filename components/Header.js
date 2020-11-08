@@ -5,58 +5,59 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import Link from "next/link";
 import { useSpring, animated } from "react-spring";
 import { Button } from "react-bootstrap";
-import Logo from '../public/logo.svg'
+import Logo from "../public/logo.svg";
 
 const Header = ({ header }) => {
   //Scroll position hook, scrollingNav true = opaque background, false = transparent
-  const [scrollingNav, setscrollingNav] = useState(false);
-  useScrollPosition(({ currPos }) => {
-    const scrollY = Math.abs(currPos.y);
-    if (scrollY > 68 && !scrollingNav) setscrollingNav(true);
-    if (scrollY < 69 && scrollingNav) setscrollingNav(false);
+  const [scrollingNav, setScrollingNav] = useState(false);
+  useScrollPosition(({ prevPos, currPos }) => {
+    if (prevPos.y > currPos.y && !scrollingNav) {
+      setScrollingNav(true);
+      console.log("set to true: " + scrollingNav);
+    }
+    if (prevPos.y < currPos.y && scrollingNav) {
+      setScrollingNav(false);
+      console.log("set to false: " + scrollingNav);
+    }
   });
 
   //Style Variables
-  const toggleId = "basic-navbar-nav";
   const scrollingStyle = {
-    backgroundColor: "rgba(101,157,189, 1)",
+    transform: "translateY(-100%)",
   };
   const normalStyle = {
-    backgroundColor: "rgba(0, 0, 0, 0)",
+    transform: "translateY(0)",
   };
   //Animation hook
   const animation = useSpring(scrollingNav ? scrollingStyle : normalStyle);
 
   return (
-    <NavBar
-      header={header}
-      toggleId={toggleId}
-      animation={animation}
-      scrollingNav={scrollingNav}
-    />
+    <NavBar header={header} animation={animation} scrollingNav={scrollingNav} />
   );
 };
 
-const NavBar = ({ header, scrollingNav, toggleId, animation }) => (
+const NavBar = ({ header, scrollingNav, animation }) => (
   <animated.div
     className={
-      "fixed-top w-100 navbar-dark p-0 m-0" + (scrollingNav ? " shadow-lg" : "")
+      "fixed-top bg-blu w-100 navbar-dark p-0 m-0" +
+      (scrollingNav ? " shadow-lg" : "")
     }
     style={animation}
   >
     <Navbar
-      className="navbar basic-navbar-nav navbar-expand-lg p-lg-0 m-lg-0"
-      style={animation}
+      className="navbar basic-navbar-nav navbar-expand-lg p-lg-0 m-lg-0 "
       expand="lg"
     >
       <Container>
         <Navbar.Brand className="p-0">
           <Link href="/">
-            <a className="text-white"><Logo className="logo"/></a>
+            <a className="text-white">
+              <Logo className="logo" />
+            </a>
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls={toggleId} />
-        <Navbar.Collapse id={toggleId}>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <NavLinks navList={header.nav_item} />
           <div className="d-flex flex-column align-items-center flex-lg-row">
             <Button

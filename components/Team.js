@@ -8,7 +8,7 @@ export const Team = ({ team }) => {
 
   useEffect(() => {
     new Rellax('.team-members', {
-      speed: 3,
+      speed: 5,
       center: false,
       wrapper: null,
       round: true,

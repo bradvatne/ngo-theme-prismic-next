@@ -7,17 +7,17 @@ export const BrandIcons = ({ doc }) => {
     <Container>
       <Row>
         {doc.items.map((item, index) => (
-            <Col md={3} className="text-center">
+          <Col md={3} className="text-center" key={index}>
             <Fade triggerOnce key={index} delay={index * 250}>
-              <i className={item.icon_link + " fa-4x p-2"} />
+              <i aria-hidden className={item.icon_link + " fa-4x p-2"} />
               <div className="p-2">
                 <RichText render={item.icon_title} />
               </div>
               <div className="text-left p-2">
                 <RichText render={item.icon_content} />
               </div>
-              </Fade>
-            </Col>
+            </Fade>
+          </Col>
         ))}
       </Row>
     </Container>

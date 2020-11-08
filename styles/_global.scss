@@ -2,7 +2,8 @@ $enable-shadows: true;
 
 $custom-font: #5d5c61;
 $custom-bg: #e3e2df;
-$custom-footer: #557a95;
+$custom-footer: #05204A;
+$custom-dark: #557a95;
 $font-family-serif: "Montserrat";
 $font-family-sans-serif: "Montserrat";
 
@@ -10,6 +11,7 @@ $theme-colors: (
   "custom-font": $custom-font,
   "custom-bg": $custom-bg,
   "custom-footer": $custom-footer,
+  "custom-dark": $custom-dark,
   "blu": #659dbd,
 );
 
@@ -37,6 +39,11 @@ body {
 
 .team-members {
   margin-top: -150px;
+}
+
+.partner-logo {
+    -webkit-filter:  grayscale(100%) brightness(60%) contrast(10000000%);
+    opacity: .3;
 }
 
 //Hover Styles

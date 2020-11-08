@@ -1,10 +1,13 @@
-import Quote from "./Quote";
-import Values from "./Values";
-import MainProject from "./MainProject";
-import PicCarousel from "./PicCarousel";
-import Stats from "./Stats";
-import BrandIcons from "./BrandIcons"
-import { Team } from './';
+import {
+  Team,
+  Partners,
+  BrandIcons,
+  Stats,
+  PicCarousel,
+  MainProject,
+  Values,
+  Quote,
+} from "./";
 
 const SliceZone = ({ slices }) => (
   <>
@@ -56,7 +59,7 @@ const SliceZone = ({ slices }) => (
               <Stats stats={slice} />
             </section>
           );
-          case "icon_section":
+        case "icon_section":
           return (
             <section
               className="section-brand-icons section"
@@ -65,14 +68,22 @@ const SliceZone = ({ slices }) => (
               <BrandIcons doc={slice} />
             </section>
           );
-          case "team":
-          console.log('DING')
+        case "team":
           return (
             <section
-              className="section-team-icons section"
+              className="section-team section bg-custom-bg"
               key={`slice-${index}`}
             >
               <Team team={slice} />
+            </section>
+          );
+        case "partners":
+          return (
+            <section
+              className="section-partners section bg-custom-dark"
+              key={`slice-${index}`}
+            >
+              <Partners partners={slice} />
             </section>
           );
       }

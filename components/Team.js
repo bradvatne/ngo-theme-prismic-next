@@ -5,7 +5,6 @@ export const Team = ({ team }) => {
   console.log("TEAM SECTION");
   console.log(team);
   return (
-    <section className="section section-team bg-custom-bg">
       <Container>
         <Row className="d-flex flex-row justify-content-center team-members">
           {team.items.map((item, index) => (
@@ -22,7 +21,6 @@ export const Team = ({ team }) => {
           ))}
         </Row>
       </Container>
-    </section>
   );
 };
 

@@ -8,7 +8,7 @@ const About = ({ about, header, footer }) => {
   return (
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={about.data} />
-      <section className="section section-about">
+      <section className="section-about">
         <SliceZone slices={about.data.body} />
       </section>
     </DefaultLayout>

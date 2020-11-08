@@ -32,9 +32,15 @@ body {
   padding-bottom: 50px;
 }
 
-.section-brand-icons {
-  padding-bottom: 100px;
+.section-partners {
 }
+
+.section-team {
+  padding-bottom: 0px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
 
 .hero-text {
   position: relative;
@@ -42,7 +48,8 @@ body {
 }
 
 .team-members {
-  margin-top: -150px;
+  margin-top: 50px;
+  padding-bottom: 0px;
 }
 
 .partner-logo {

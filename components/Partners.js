@@ -1,9 +1,11 @@
 import { Row, Col, Container } from "react-bootstrap";
-import { RichText } from "prismic-reactjs";
+import {Slide} from 'react-awesome-reveal';
+
 
 export const Partners = ({ partners }) => {
   return (
     <Container>
+    <Slide direction="up" triggerOnce>
       <Row className="d-flex flex-row justify-content-center">
         <Col sm={12}>
           <Row className="d-flex flex-row justify-content-center">
@@ -18,6 +20,7 @@ export const Partners = ({ partners }) => {
           </Row>
         </Col>
       </Row>
+      </Slide>
     </Container>
   );
 };

@@ -5,13 +5,13 @@ export const Partners = ({ partners }) => {
   return (
     <Container>
       <Row className="d-flex flex-row justify-content-center">
-        <Col sm={8}>
-          <Row>
+        <Col sm={12}>
+          <Row className="d-flex flex-row justify-content-center">
             {partners.items.map((item, index) => (
-              <Col xs={2} key={index}>
+              <Col xs={4} lg={2} key={index}>
                 <img
                   src={item.partner_logo.url}
-                  className="img-fluid partner-logo"
+                  className="img-fluid partner-logo p-2"
                 />
               </Col>
             ))}

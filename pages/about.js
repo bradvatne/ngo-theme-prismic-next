@@ -1,16 +1,10 @@
-import Prismic from "prismic-javascript";
-import Link from "next/link";
 import { Client } from "../prismic-configuration";
-import { RichText } from "prismic-reactjs";
 import { PageBanner } from "../components";
-import { Container, Row, Col } from "react-bootstrap";
 import DefaultLayout from "../layouts";
 import { Fade } from "react-awesome-reveal";
-import { SliceZone } from '../components';
+import { SliceZone } from "../components";
 
 const About = ({ about, header, footer }) => {
-  console.log(about)
-  console.log(about.data.body[0].items)
   return (
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={about.data} />

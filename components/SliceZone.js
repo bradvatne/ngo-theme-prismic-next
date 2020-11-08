@@ -4,6 +4,7 @@ import MainProject from "./MainProject";
 import PicCarousel from "./PicCarousel";
 import Stats from "./Stats";
 import BrandIcons from "./BrandIcons"
+import { Team } from './';
 
 const SliceZone = ({ slices }) => (
   <>
@@ -56,13 +57,22 @@ const SliceZone = ({ slices }) => (
             </section>
           );
           case "icon_section":
-          console.log('DING')
           return (
             <section
               className="section-brand-icons section"
               key={`slice-${index}`}
             >
               <BrandIcons doc={slice} />
+            </section>
+          );
+          case "team":
+          console.log('DING')
+          return (
+            <section
+              className="section-team-icons section"
+              key={`slice-${index}`}
+            >
+              <Team team={slice} />
             </section>
           );
       }

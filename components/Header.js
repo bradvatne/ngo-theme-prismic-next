@@ -50,7 +50,7 @@ const NavBar = ({ header, scrollingNav, toggleId, animation }) => (
       expand="lg"
     >
       <Container>
-        <Navbar.Brand className="p-0 py-lg-2">
+        <Navbar.Brand className="p-0">
           <Link href="/">
             <a className="text-white"><Logo className="logo"/></a>
           </Link>
@@ -80,7 +80,7 @@ const NavLinks = ({ navList }) => {
     <Nav className="ml-auto">
       {navList.map((navItem, index) => (
         <Link href={navItem.link.type} key={index}>
-          <a className="text-white p-3 text-center text-lg-left">
+          <a className="text-white p-4 text-center text-lg-left">
             {RichText.asText(navItem.label)}
           </a>
         </Link>

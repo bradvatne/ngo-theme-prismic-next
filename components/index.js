@@ -11,3 +11,4 @@ export { default as LatestProjects } from "./LatestProjects";
 export { default as LandingPage } from "./LandingPage";
 export { default as FeaturedProjects } from "./FeaturedProjects";
 export { default as BrandIcons } from "./BrandIcons";
+export { default as Team } from "./Team";

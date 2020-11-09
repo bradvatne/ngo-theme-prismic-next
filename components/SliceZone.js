@@ -7,7 +7,7 @@ import {
   MainProject,
   Values,
   Quote,
-} from "./";
+} from "./index";
 
 const SliceZone = ({ slices }) => (
   <>
@@ -53,7 +53,7 @@ const SliceZone = ({ slices }) => (
         case "statistics":
           return (
             <section
-              className="section-statistics section"
+              className=" section section-statistics"
               key={`slice-${index}`}
             >
               <Stats stats={slice} />
@@ -62,7 +62,7 @@ const SliceZone = ({ slices }) => (
         case "icon_section":
           return (
             <section
-              className="section-brand-icons section"
+              className="section section-brand-icons bg-custom-bg"
               key={`slice-${index}`}
             >
               <BrandIcons doc={slice} />
@@ -71,7 +71,7 @@ const SliceZone = ({ slices }) => (
         case "team":
           return (
             <section
-              className="section-team section bg-custom-bg"
+              className="section section-team"
               key={`slice-${index}`}
             >
               <Team team={slice} />

@@ -1,4 +1,4 @@
-import { Header, Footer } from "../components";
+import { Header, Footer } from "../components/index";
 import Head from 'next/head';
 
 const DefaultLayout = (props) => {

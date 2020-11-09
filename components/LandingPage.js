@@ -1,4 +1,4 @@
-import { Banner, SliceZone, LatestProjects, FeaturedProjects } from ".";
+import { Banner, SliceZone, FeaturedProjects } from "./index";
 import DefaultLayout from "../layouts";
 
 const LandingPage = ({ header, home, footer, projects }) => (

@@ -6,10 +6,6 @@ import { Fade } from "react-awesome-reveal";
 const PicCarousel = ({ projects }) => {
   return (
     <Container>
-      {/* <div className="text-center mb-5">
-        <RichText htmlSerializer={htmlSerializer} render={projects.primary.projects_title} />
-         <RichText render={projects.primary.projects_description} /> 
-      </div>*/}
       <Fade triggerOnce>
         <Carousel>
           {projects.items.map((item, index) => (

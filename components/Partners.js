@@ -1,6 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap";
-import {Slide} from 'react-awesome-reveal';
-
+import { Slide } from 'react-awesome-reveal';
 
 export const Partners = ({ partners }) => {
   return (

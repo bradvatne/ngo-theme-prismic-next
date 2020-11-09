@@ -2,7 +2,7 @@ $enable-shadows: true;
 
 $custom-font: #5d5c61;
 $custom-bg: #e3e2df;
-$custom-footer: #05204A;
+$custom-footer: #05204a;
 $custom-dark: #557a95;
 $font-family-serif: "Montserrat";
 $font-family-sans-serif: "Montserrat";
@@ -21,7 +21,7 @@ body {
 }
 //Header styles
 
-.logo g{
+.logo g {
   fill: white;
 }
 
@@ -43,10 +43,10 @@ body {
 }
 
 .partner-logo {
-    -webkit-filter:  grayscale(100%) brightness(60%) contrast(10000000%);
-    opacity: .3;
+  -webkit-filter: grayscale(100%) brightness(60%) contrast(10000000%);
+  opacity: 0.3;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import "~bootstrap/scss/bootstrap.scss";
-@import "./_hover.scss";
+@import "hover";

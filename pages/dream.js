@@ -6,6 +6,7 @@ import { PageBanner } from "../components";
 import { Container, Row, Col } from "react-bootstrap";
 import DefaultLayout from "../layouts";
 import { Fade } from "react-awesome-reveal";
+import {Timeline} from '../components';
 
 const Dream = ({ dream, header, footer }) => {
   return (
@@ -13,7 +14,7 @@ const Dream = ({ dream, header, footer }) => {
       <PageBanner doc={dream.data} />
       <section className="section section-pagebanner">
         <Container>
-          <Row>Our Dream</Row>
+          <Timeline />
         </Container>
       </section>
     </DefaultLayout>

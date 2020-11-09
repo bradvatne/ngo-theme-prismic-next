@@ -13,3 +13,4 @@ export { default as BrandIcons } from "./BrandIcons";
 export { default as Team } from "./Team";
 export { default as Partners } from "./Partners";
 export { default as PicCarousel } from "./PicCarousel";
+export { default as Timeline } from "./Timeline";

@@ -12,6 +12,7 @@ const Header = ({ header }) => {
   const [hideNav, setHideNav] = useState(false);
 
   useScrollPosition(({ prevPos, currPos }) => {
+    console.log('FUCK')
     if (prevPos.y < currPos.y) {
       setHideNav(false);
     }
@@ -22,10 +23,10 @@ const Header = ({ header }) => {
 
   //Style Variables
   const scrollingStyle = {
-    transform: "translateY(-100%)",
+    top: -100,
   };
   const normalStyle = {
-    transform: "translateY(0)",
+    top: 0,
   };
 
   //Animation hook
@@ -44,7 +45,7 @@ const NavBar = ({ header, animation }) => (
       expand="lg"
     >
       <Container>
-        <Navbar.Brand className="p-0">
+        <Navbar.Brand className="p-3 py-lg-0">
           <Link href="/">
             <a className="text-white">
               <Logo className="logo" />

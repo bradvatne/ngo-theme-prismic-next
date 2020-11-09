@@ -47,6 +47,10 @@ body {
   opacity: 0.3;
 }
 
+.navbar {
+  padding: 0 !important;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import "~bootstrap/scss/bootstrap.scss";
 @import "hover";

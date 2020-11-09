@@ -4,7 +4,6 @@ import { Slide, Fade } from "react-awesome-reveal";
 
 const FeaturedProjects = ({ projects }) => {
   const projectsSlice = projects.slice(0, 3);
-  console.log(projects);
   return (
     <section className="section section-featured-projects bg-light">
       <Container>

@@ -2,32 +2,21 @@ import { Row, Col, Container } from "react-bootstrap";
 import { RichText } from "prismic-reactjs";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import React, { useRef, useEffect, useState } from "react";
-import Rellax from "rellax";
+import { Parallax } from "react-scroll-parallax";
 
 export const Team = ({ team }) => {
-
-  useEffect(() => {
-    new Rellax('.team-members', {
-      speed: 5,
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    });
-  }, []);
-
   return (
     <Container>
       <Row className="d-flex flex-row justify-content-center team-members">
         {team.items.map((item, index) => (
-          <Col lg={4} key={index}>
+          <Col lg={4}>
             <div className="text-center">
-              <img
-                src={item.portrait.url}
-                className="img-fluid rounded-circle shadow-lg w-75"
-              
-              />
+              <Parallax y={[-150, 0]} tagOuter="figure" key={index}>
+                <img
+                  src={item.portrait.url}
+                  className="img-fluid rounded-circle shadow-lg w-75 "
+                />
+              </Parallax>
               <RichText render={item.name} />
             </div>
             <RichText render={item.bio} />

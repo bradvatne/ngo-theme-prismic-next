@@ -10,12 +10,13 @@ import Logo from "../public/logo.svg";
 const Header = ({ header }) => {
   //Scroll position hook, hideNav true = opaque background, false = transparent
   const [hideNav, setHideNav] = useState(false);
+
   useScrollPosition(({ prevPos, currPos }) => {
+    if (prevPos.y < currPos.y) {
+      setHideNav(false);
+    }
     if (prevPos.y > currPos.y) {
       setHideNav(true);
-    }
-    if (prevPos.y < currPos.y ) {
-      setHideNav(false);
     }
   });
 
@@ -26,20 +27,16 @@ const Header = ({ header }) => {
   const normalStyle = {
     transform: "translateY(0)",
   };
+
   //Animation hook
   const animation = useSpring(hideNav ? scrollingStyle : normalStyle);
 
-  return (
-    <NavBar header={header} animation={animation} hideNav={hideNav} />
-  );
+  return <NavBar header={header} animation={animation} hideNav={hideNav} />;
 };
 
-const NavBar = ({ header, hideNav, animation }) => (
+const NavBar = ({ header, animation }) => (
   <animated.div
-    className={
-      "fixed-top bg-blu w-100 navbar-dark p-0 m-0" +
-      (hideNav ? " shadow-lg" : "")
-    }
+    className={"fixed-top bg-blu w-100 navbar-dark p-0 m-0"}
     style={animation}
   >
     <Navbar

@@ -9,7 +9,7 @@ const Footer = ({ footer, nav }) => {
       <Container>
         <Row className="d-flex justify-content-between">
           <Col md="6">
-            <Fade triggerOnce>
+            <Fade triggerOnce fraction={0.5}>
               <div>
                 <RichText render={footer.brand_name} />
                 <hr />
@@ -18,7 +18,7 @@ const Footer = ({ footer, nav }) => {
             </Fade>
           </Col>
           <Col md="3">
-            <Fade triggerOnce>
+            <Fade triggerOnce fraction={0.5}>
               <div>
                 <RichText render={footer.email_capture_title} />
               </div>
@@ -48,26 +48,18 @@ const SocialsWidget = ({ socials }) => (
     {socials.socials_widget.map((item, index) => (
       <Link href="/placeholder" className="text-light" key={index}>
         <a className="text-light px-2">
-          <i
-            aria-hidden
-            className={"fa-2x fab fa-" + item.socials_widget_icon.toLowerCase()}
-          />
+          <Fade delay={index * 50} triggerOnce>
+            <i
+              aria-hidden
+              className={
+                "fa-2x fab fa-" + item.socials_widget_icon.toLowerCase()
+              }
+            />
+          </Fade>
         </a>
       </Link>
     ))}
   </Row>
 );
-
-const NavLinks = ({ navList }) => {
-  return (
-    <div className="d-flex flex-column">
-      {navList.map((navItem, index) => (
-        <Link href={navItem.link.type} key={index}>
-          <a className="text-white">{RichText.asText(navItem.label)}</a>
-        </Link>
-      ))}
-    </div>
-  );
-};
 
 export default Footer;

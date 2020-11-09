@@ -12,32 +12,30 @@ const Projects = ({ header, footer, projects, projectsPosts }) => {
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={projects.data} />
       <section className="section section-projects-page py-4">
-        <Container>
-          <Row>
-            {projectsPosts.results.map((project, index) => (
-              <Col md={6} key={project.id} className="py-3">
-                <Fade triggerOnce delay={index * 250}>
-                  <Link
-                    href={{
-                      pathname: "/projects/[uid]",
-                      query: { uid: project.uid },
-                    }}
-                  >
-                    <a className="hovereffect">
-                      <img
-                        className="img-fluid shadow-lg"
-                        src={project.data.image.url}
-                      />
-                      <div className="overlay text-white">
-                        <RichText render={project.data.title} />
-                      </div>
-                    </a>
-                  </Link>
-                </Fade>
-              </Col>
-            ))}
-          </Row>
-        </Container>
+        <Row className="px-4 d-flex justify-content-center">
+          {projectsPosts.results.map((project, index) => (
+            <Col lg={4} key={project.id} className="py-3">
+              <Fade triggerOnce delay={index * 250}>
+                <Link
+                  href={{
+                    pathname: "/projects/[uid]",
+                    query: { uid: project.uid },
+                  }}
+                >
+                  <a className="hovereffect">
+                    <img
+                      className="img-fluid shadow-lg"
+                      src={project.data.image.url}
+                    />
+                    <div className="overlay text-white">
+                      <RichText render={project.data.title} />
+                    </div>
+                  </a>
+                </Link>
+              </Fade>
+            </Col>
+          ))}
+        </Row>
       </section>
     </DefaultLayout>
   );

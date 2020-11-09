@@ -14,14 +14,12 @@ const FeaturedProjects = ({ projects }) => {
                 className={"py-4 d-flex flex-row" + (index === 1 && "-reverse")}
               >
                 <Col md={6}>
-                  <Fade triggerOnce>
-                    <Slide triggerOnce direction={index === 1 ? "right" : "left"}>
-                      <img
-                        src={item.data.image.url}
-                        className="img-fluid shadow-lg"
-                        style={{ zIndex: "999" }}
-                      />
-                    </Slide>
+                  <Fade triggerOnce direction="up">
+                    <img
+                      src={item.data.image.url}
+                      className="img-fluid shadow-lg"
+                      style={{ zIndex: "999" }}
+                    />
                   </Fade>
                 </Col>
                 <Col
@@ -31,9 +29,12 @@ const FeaturedProjects = ({ projects }) => {
                     (index === 1 ? " text-md-right" : " ")
                   }
                 >
-                  <Fade triggerOnce direction="down">
-                    <div style={{ zIndex: 3 }}>
+                  <Fade triggerOnce direction="up">
+                    <div className={"text-center text-md-left py-2" +
+                    (index === 1 ? " text-md-right" : " ")}>
                       <RichText render={item.data.title} />
+                    </div>
+                    <div>
                       <RichText render={item.data.content} />
                     </div>
                   </Fade>

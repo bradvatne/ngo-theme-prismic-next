@@ -10,7 +10,7 @@ const PageBanner = ({ doc }) => {
           className="section-banner"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${doc.image.url})`,
-            height: "50vh",
+            height: "75vh ",
             backgroundSize: "cover",
             backgroundPosition: "bottom",
           }}

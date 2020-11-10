@@ -12,7 +12,6 @@ const Header = ({ header }) => {
   const [hideNav, setHideNav] = useState(false);
 
   useScrollPosition(({ prevPos, currPos }) => {
-    console.log('FUCK')
     if (prevPos.y < currPos.y) {
       setHideNav(false);
     }

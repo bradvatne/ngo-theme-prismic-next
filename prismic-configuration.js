@@ -17,4 +17,5 @@ const createClientOptions = (req = null, prismicAccessToken = null) => {
   };
 };
 
+
 export default Client;

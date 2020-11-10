@@ -45,7 +45,7 @@ const NavBar = ({ header, animation }) => (
     >
       <Container>
         <Navbar.Brand className="p-3 py-lg-0">
-          <Link href="/">
+          <Link replace={true} href="/">
             <a className="text-white">
               <Logo className="logo" />
             </a>
@@ -75,7 +75,7 @@ const NavLinks = ({ navList }) => {
   return (
     <Nav className="ml-auto">
       {navList.map((navItem, index) => (
-        <Link href={navItem.link.type} key={index}>
+        <Link href={`/${navItem.link.type}`} key={index}>
           <a className="text-white p-4 text-center text-lg-left">
             {RichText.asText(navItem.label)}
           </a>

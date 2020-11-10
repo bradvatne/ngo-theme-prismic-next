@@ -8,11 +8,12 @@ import DefaultLayout from "../layouts";
 import { Fade } from "react-awesome-reveal";
 
 const Projects = ({ header, footer, projects, projectsPosts }) => {
+  console.log(projectsPosts);
   return (
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={projects.data} />
       <section className="section section-projects-page py-4">
-        <Row className="px-4 d-flex justify-content-center">
+        <Row className="mx-0 d-flex justify-content-center container-fluid">
           {projectsPosts.results.map((project, index) => (
             <Col lg={4} key={project.id} className="py-3">
               <Fade triggerOnce delay={index * 250}>

@@ -7,6 +7,7 @@ import {
   MainProject,
   Values,
   Quote,
+  Timeline,
 } from "./index";
 
 const SliceZone = ({ slices }) => (
@@ -70,10 +71,7 @@ const SliceZone = ({ slices }) => (
           );
         case "team":
           return (
-            <section
-              className="section section-team"
-              key={`slice-${index}`}
-            >
+            <section className="section section-team" key={`slice-${index}`}>
               <Team team={slice} />
             </section>
           );
@@ -86,6 +84,23 @@ const SliceZone = ({ slices }) => (
               <Partners partners={slice} />
             </section>
           );
+        case "carousel":
+          return (
+            <section
+              className="section section-carousel"
+              key={`slice-${index}`}
+            >
+              <PicCarousel doc={slice} />
+            </section>
+          );
+        case "timeline":
+          return (
+            <section className="section section-timeline"
+            key={`slice-${index}`}
+            >
+              <Timeline doc={slice} />
+            </section>
+          )
       }
     })}
   </>

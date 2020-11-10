@@ -6,15 +6,18 @@ import { PageBanner } from "../components";
 import { Container, Row, Col } from "react-bootstrap";
 import DefaultLayout from "../layouts";
 import { Fade } from "react-awesome-reveal";
-import {Timeline} from '../components';
+import { Timeline, SliceZone } from "../components";
 
 const Dream = ({ dream, header, footer }) => {
+  console.log('DREAM DATA')
+  console.log(dream)
   return (
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={dream.data} />
       <section className="section section-pagebanner">
         <Container>
-          <Timeline />
+          <RichText render={dream.data.content} />
+          <SliceZone slices={dream.data.body}/>
         </Container>
       </section>
     </DefaultLayout>

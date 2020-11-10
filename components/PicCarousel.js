@@ -3,27 +3,28 @@ import { RichText } from "prismic-reactjs";
 import htmlSerializer from "../lib/htmlSerializer";
 import { Fade } from "react-awesome-reveal";
 
-const PicCarousel = ({ projects }) => {
+const PicCarousel = ({ doc }) => {
+  console.log(doc);
   return (
-    <Container>
-      <Fade triggerOnce>
-        <Carousel>
-          {projects.items.map((item, index) => (
-            <Carousel.Item key={index}>
-              <img
-                className="d-block w-100"
-                src={item.project_image.url}
-                alt="Slide"
-              />
-              <Carousel.Caption>
-                <RichText render={item.project_title} />
-                <RichText render={item.project_description} />
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      </Fade>
-    </Container>
+    <Fade triggerOnce>
+      <Carousel>
+        {doc.items.map((item, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={item.carousel_image.url}
+              alt="Slide"
+            />
+            <Carousel.Caption>
+              <div>
+                <RichText render={item.carousel_image_title} />
+                <RichText render={item.carousel_image_tagline} />
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </Fade>
   );
 };
 

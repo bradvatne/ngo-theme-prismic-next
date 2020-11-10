@@ -1,12 +1,9 @@
-import Prismic from "prismic-javascript";
-import Link from "next/link";
 import { Client } from "../prismic-configuration";
 import { RichText } from "prismic-reactjs";
 import { PageBanner } from "../components";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import DefaultLayout from "../layouts";
-import { Fade } from "react-awesome-reveal";
-import { Timeline, SliceZone } from "../components";
+import { SliceZone } from "../components";
 
 const Dream = ({ dream, header, footer }) => {
   console.log('DREAM DATA')

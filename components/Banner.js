@@ -1,5 +1,5 @@
 import { RichText } from "prismic-reactjs";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import htmlSerializer from "../lib/htmlSerializer";
 import { Fade } from "react-awesome-reveal";
 
@@ -19,7 +19,12 @@ const Banner = ({ banner }) => {
           <div className="hero-text text-white">
             <RichText render={banner.banner_title} />
             <RichText render={banner.banner_tagline} />
-            <div>{RichText.asText(banner.banner_button_label)}</div>
+
+            <Button variant="outline-light" className="">
+              <span className="">
+                {RichText.asText(banner.banner_button_label)}
+              </span>
+            </Button>
           </div>
         </Container>
       </section>

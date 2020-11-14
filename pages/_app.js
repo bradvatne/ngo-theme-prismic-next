@@ -4,7 +4,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 
 const MyApp = ({ Component, pageProps }) => (
   <ParallaxProvider>
-    <Component {...pageProps} />;
+    <Component {...pageProps} />
   </ParallaxProvider>
 );
 export default MyApp;

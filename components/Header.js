@@ -51,13 +51,16 @@ const NavBar = ({ header, animation }) => (
             </a>
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="btn-disable-focus mr-3"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <NavLinks navList={header.nav_item} />
           <div className="d-flex flex-column align-items-center flex-lg-row">
             <Button
               variant="outline-light"
-              className="mb-3 mb-lg-0 ml-lg-2 w-50"
+              className="mb-3 mt-3 mt-lg-0 mb-lg-0 ml-lg-2 w-50"
             >
               <span className="px-2">Volunteer</span>
             </Button>

@@ -27,6 +27,11 @@ body {
 
 //Section styles
 
+.btn-disable-focus:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .section {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -51,6 +56,12 @@ body {
   padding: 0 !important;
 }
 
+.navbar-nav a:hover {
+  color: #659dbd !important;
+  background-color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import "~bootstrap/scss/bootstrap.scss";

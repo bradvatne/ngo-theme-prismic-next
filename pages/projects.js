@@ -9,6 +9,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Projects = ({ header, footer, projects, projectsPosts }) => {
   console.log(projectsPosts);
+  console.log(projects)
   return (
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={projects.data} />

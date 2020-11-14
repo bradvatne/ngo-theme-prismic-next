@@ -1,6 +1,5 @@
 import { RichText } from "prismic-reactjs";
 import { Container, Button } from "react-bootstrap";
-import htmlSerializer from "../lib/htmlSerializer";
 import { Fade } from "react-awesome-reveal";
 
 const Banner = ({ banner }) => {

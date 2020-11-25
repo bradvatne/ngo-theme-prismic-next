@@ -66,7 +66,9 @@ const Footer = ({ footer, nav }) => {
                     className="my-2"
                     className="w-100"
                   >
+                  <small className="text-uppercase">
                     Submit
+                    </small>
                   </Button>
                 </Form>
                 <SocialsWidget socials={footer} />

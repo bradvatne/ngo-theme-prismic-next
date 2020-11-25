@@ -60,12 +60,12 @@ const NavBar = ({ header, animation }) => (
           <div className="d-flex flex-column align-items-center flex-lg-row">
             <Button
               variant="outline-light"
-              className="mb-3 mt-3 mt-lg-0 mb-lg-0 ml-lg-2 w-50"
+              className="mb-3 mt-3 mt-lg-0 mb-lg-0 ml-lg-2 w-50 text-uppercase"
             >
-              <span className="px-2">Volunteer</span>
+              <small className="px-2">Volunteer</small>
             </Button>
-            <Button variant="light" className="mb-3 mb-lg-0 ml-lg-2 w-50">
-              <span className="px-2">Donate</span>
+            <Button variant="light" className="mb-3 mb-lg-0 ml-lg-2 w-50 text-uppercase">
+              <small className="px-2">Donate</small>
             </Button>
           </div>
         </Navbar.Collapse>
@@ -79,8 +79,8 @@ const NavLinks = ({ navList }) => {
     <Nav className="ml-auto">
       {navList.map((navItem, index) => (
         <Link href={`/${navItem.link.type}`} key={index}>
-          <a className="text-white p-4 text-center text-lg-left">
-            {RichText.asText(navItem.label)}
+          <a className="text-white p-4 text-center text-lg-left text-small text-uppercase">
+            <small>{RichText.asText(navItem.label)}</small>
           </a>
         </Link>
       ))}

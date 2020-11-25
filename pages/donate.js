@@ -9,6 +9,19 @@ const Donate = ({ donate, header, footer }) => {
     <DefaultLayout header={header} footer={footer}>
       <PageBanner doc={donate.data} />
       <SliceZone slices={donate.data.body} />
+      <Container>
+          <Row>
+              <Col lg={4}>
+                Hello
+              </Col>
+              <Col lg={4}>
+                Hello
+              </Col>
+              <Col lg={4}>
+                Hello
+              </Col>
+          </Row>
+      </Container>
     </DefaultLayout>
   );
 };

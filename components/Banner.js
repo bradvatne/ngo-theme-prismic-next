@@ -20,9 +20,9 @@ const Banner = ({ banner }) => {
             <RichText render={banner.banner_tagline} />
 
             <Button variant="outline-light" className="">
-              <span className="">
+              <small className="text-uppercase">
                 {RichText.asText(banner.banner_button_label)}
-              </span>
+              </small>
             </Button>
           </div>
         </Container>

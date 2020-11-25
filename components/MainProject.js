@@ -31,17 +31,21 @@ const MainProject = ({ mainProject }) => {
                 <Fade triggerOnce>
                   <div className="d-flex flex-row justify-content-center">
                     <Button variant="outline-blu" className="px-5 mx-3">
+                    <small className="text-uppercase">
                       {RichText.asText(
                         mainProject.primary.main_project_button_1_label
                       )}
+                      </small>
                     </Button>
                     <Button
                       variant="outline-blu"
                       className="px-5 mx-3 text-nowrap"
                     >
+                    <small className="text-uppercase">
                       {RichText.asText(
                         mainProject.primary.main_project_button_2_label
                       )}
+                      </small>
                     </Button>
                   </div>
                 </Fade>

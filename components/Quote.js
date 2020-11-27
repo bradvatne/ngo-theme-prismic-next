@@ -14,8 +14,8 @@ const Quote = ({ quote }) => (
         <Fade triggerOnce>
           <div>
             <Button variant="outline-blu" className="px-3">
-            <small className="text-uppercase">
-              {RichText.asText(quote.quote_button_label)}
+              <small className="text-uppercase">
+                {RichText.asText(quote.quote_button_label)}
               </small>
             </Button>
           </div>
